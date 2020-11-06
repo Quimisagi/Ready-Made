@@ -4,7 +4,7 @@
 [ext_resource path="res://Jugador.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 42.6342
+radius = 0.489349
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -29,7 +29,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2( -0.353546, 5.65686 )
 shape = SubResource( 1 )
 
@@ -42,6 +41,7 @@ limit_right = 1920
 limit_bottom = 1080
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 5.5 )
 shape = SubResource( 2 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
