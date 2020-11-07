@@ -10,11 +10,13 @@ var movement_range = 350
 var limitX = 1200
 var limitY = 400
 var min_points = 6
-var max_points = 20
+var max_points = 15
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	limitX = limitX + position.x
+	limitY = limitY + position.y
 	randomize()
 	
 func _process(delta):
@@ -22,6 +24,7 @@ func _process(delta):
 	
 func _on_PlayerDetector_body_entered(body):
 	body.collected_memories += 1
+	body._check_if_memories_completed()
 	queue_free()
 
 func _make_interpolations(points_array: Array, t: float):
