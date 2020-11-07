@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Escena" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -960.0
+margin_top = -540.0
+margin_right = 960.0
+margin_bottom = 540.0
+rect_pivot_offset = Vector2( 952, 552 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
