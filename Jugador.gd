@@ -3,6 +3,7 @@ extends KinematicBody2D
 var MAX_SPEED = 500
 var ACCEL = 2000
 var motion = Vector2.ZERO
+var collected_memories = 0
 
 onready var cam = $Camera2D
 
@@ -32,7 +33,6 @@ func apply_movement(acceleration):
 	motion = motion.clamped(MAX_SPEED)
 
 
-
 func _on_RoomArea_area_entered(area):
 	var collision_shape = area.get_node("CollisionShape2D")
 	var size = collision_shape.shape.extents*2
@@ -43,6 +43,8 @@ func _on_RoomArea_area_entered(area):
 
 	cam.limit_bottom = cam.limit_top + size.y
 	cam.limit_right = cam.limit_left + size.x
+	
+
 
 
 
