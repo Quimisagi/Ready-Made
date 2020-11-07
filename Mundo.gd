@@ -1,10 +1,11 @@
 extends Node2D
 
-var MEMORIES_TO_RECOVER = 3
+var MEMORIES_TO_RECOVER = 4
+signal memories_completed
 
 func _ready():
-	pass # Replace with function body.
+	pass
 	
 func _are_memories_collected(var mem):
 	if mem == MEMORIES_TO_RECOVER:
-		print("Sí xd")
+		emit_signal("memories_completed")

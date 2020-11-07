@@ -37,7 +37,6 @@ func _on_RoomArea_area_entered(area):
 	var collision_shape = area.get_node("CollisionShape2D")
 	var size = collision_shape.shape.extents*2
 
-
 	cam.limit_top = collision_shape.global_position.y - size.y/2
 	cam.limit_left = collision_shape.global_position.x - size.x/2
 
