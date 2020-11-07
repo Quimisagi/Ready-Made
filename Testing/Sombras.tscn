@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Niveles/Areas/AreaDeSombras.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 763.156, 463.459 )
+
+[node name="AreaDeSombras" parent="." instance=ExtResource( 3 )]
+position = Vector2( 239.985, 166.858 )
+
+[node name="Sombra" parent="." instance=ExtResource( 1 )]
+position = Vector2( 414.497, 337.744 )
+speed = 200.0
+
+[node name="Sombra2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 438.308, 45.6628 )
+speed = 200.0
+
+[node name="Sombra3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 87.4926, -22.5954 )
+speed = 200.0
+
+[node name="Sombra4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16.0597, 242.5 )
+speed = 200.0
