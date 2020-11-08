@@ -16,7 +16,11 @@ extents = Vector2( 2214.13, 157.155 )
 extents = Vector2( 965.014, 553.086 )
 
 [node name="Mundo" type="Node2D"]
+position = Vector2( -15.4314, 3266.93 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Escenario" type="StaticBody2D" parent="."]
 
