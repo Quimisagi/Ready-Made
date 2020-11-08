@@ -104,3 +104,6 @@ __meta__ = {
 }
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
 [connection signal="area_entered" from="Escena2/cinematica" to="Jugador" method="_on_cinematica_area_entered"]
+[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
+
+[editable path="Jugador"]

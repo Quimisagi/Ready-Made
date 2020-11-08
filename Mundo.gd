@@ -9,3 +9,7 @@ func _ready():
 func _are_memories_collected(var mem):
 	if mem == MEMORIES_TO_RECOVER:
 		emit_signal("memories_completed")
+
+
+func _on_Jugador_died() -> void:
+	get_tree().reload_current_scene()
