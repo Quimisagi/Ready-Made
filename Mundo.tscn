@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escena1.tscn" type="PackedScene" id=2]
@@ -80,4 +80,27 @@ autoplay = true
 position = Vector2( 507.969, 1466.76 )
 
 [node name="Recuerdo2" parent="." instance=ExtResource( 3 )]
+
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -16.0181, 1126.6 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.653809, 2335.86 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -31.0
+margin_top = -52.0
+margin_right = 77.0
+margin_bottom = 78.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
 [connection signal="area_entered" from="Escena2/cinematica" to="Jugador" method="_on_cinematica_area_entered"]
