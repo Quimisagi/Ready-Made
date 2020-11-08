@@ -6,9 +6,15 @@ var min_speed = 0.3
 var max_speed = 0.15
 var speed = 0
 var active = true
+<<<<<<< Updated upstream
 var movement_range = 350
 var limitX = 1200
 var limitY = 400
+=======
+var movement_range = 300
+var limitX = 600
+var limitY = 350
+>>>>>>> Stashed changes
 var min_points = 6
 var max_points = 15
 
@@ -41,15 +47,22 @@ func _select_random_points():
 	array.append(position)
 	for i in range(array.size(), points_number + 1):
 		var point = generate_point_within_the_limit()
+		_prueba(point)
 		array.append(point)
 	return array
 	
 func generate_point_within_the_limit():
 	var randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
 	var point = position + randomVec
+<<<<<<< Updated upstream
 	while point.x > limitX || point.x < -limitX || point.y > limitY || point.y < -limitY:
+=======
+	var xd = _prueba(point)
+	while xd:
+>>>>>>> Stashed changes
 		randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
 		point = position + randomVec
+		xd = _prueba(point)
 	return point
 
 func _get_point_of_curve_path(points_array: Array, t: float):
@@ -69,5 +82,20 @@ func _follow_random_curve_path(delta):
 		t += speed * delta
 	
 
+func _prueba(point):
+	pass
+	#var space = get_world_2d().get_direct_space_state()
+	#var results = space.intersect_point(point, 32, [], 2147483647, false, true)
+	#if results.size() > 0:
+	#	for dictionarie in results:
+	#		if dictionarie.collider.is_in_group('wall'):
+	#			print("Entró")
+	#			return true
+	#return false
+		
 
 
+
+func _on_Area2D_body_entered(body):
+	print("Se paró")
+	active = false
