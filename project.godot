@@ -16,15 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="GameLabJam"
-run/main_scene="res://Escenas/Escena1.tscn"
+run/main_scene="res://Mundo.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
 
 [input]
 
@@ -62,4 +60,5 @@ ui_down={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.14902, 0.192157, 0.219608, 1 )
 environment/default_environment="res://default_env.tres"

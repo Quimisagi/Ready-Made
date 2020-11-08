@@ -8,6 +8,7 @@ signal died
 
 onready var cam = $Camera2D
 
+
 func _physics_process(delta):
 	var axis = get_input_axis()
 	if axis == Vector2.ZERO:
