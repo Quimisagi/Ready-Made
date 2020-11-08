@@ -8,6 +8,7 @@ signal died
 
 onready var cam = $Camera2D
 
+
 func _physics_process(delta):
 	var axis = get_input_axis()
 	if axis == Vector2.ZERO:
@@ -54,4 +55,5 @@ func _check_if_memories_completed():
 	
 func _die():
 	emit_signal("died")
+	
 #	queue_free()

@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu/CreditsButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GAME_410x282.png" type="Texture" id=2]
+[ext_resource path="res://Menu/PlayButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fade_In/FadeIn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/PantallaMenu.gd" type="Script" id=5]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.9282
+margin_top = 12.9641
+margin_right = 25.9282
+margin_bottom = 12.9641
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGround" type="ColorRect" parent="."]
+anchor_left = -0.072
+anchor_top = -0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 54.3704
+margin_top = 0.74353
+margin_right = 26.1304
+margin_bottom = 28.7435
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 121.759
+margin_top = 97.0
+margin_right = 1738.76
+margin_bottom = 942.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+margin_right = 1617.0
+margin_bottom = 282.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="FilaCentral" type="HBoxContainer" parent="Menu"]
+margin_top = 286.0
+margin_right = 1617.0
+margin_bottom = 845.0
+size_flags_vertical = 3
+
+[node name="Botones" type="VBoxContainer" parent="Menu/FilaCentral"]
+margin_right = 1617.0
+margin_bottom = 559.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PlayButton" parent="Menu/FilaCentral/Botones" instance=ExtResource( 3 )]
+margin_left = 0.0
+margin_top = 77.0
+margin_bottom = 277.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="CreditsButton" parent="Menu/FilaCentral/Botones" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 281.0
+margin_bottom = 481.0
+
+[node name="FadeIn" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = -124.579
+margin_top = -119.413
+margin_right = 106.421
+margin_bottom = 46.5865
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
