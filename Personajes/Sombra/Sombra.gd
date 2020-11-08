@@ -7,8 +7,16 @@ export var speed: float = 100 #px/s
 var initial_position: Vector2
 var wasSpawned: bool = false
 
+var movement_range = 50
+var limitX = 250
+var limitY = 250
+
 func _ready() -> void:
+	randomize()
+	limitX = limitX + position.x
+	limitY = limitY + position.y
 	initial_position = position
+	$IdleTimer.wait_time = rand_range(2, 6)
 	
 func change_to_attack_mode(target):
 	self.target = target
@@ -30,7 +38,6 @@ func return_to_origin() -> bool:
 func _physics_process(delta: float) -> void:
 	match state:
 		STATES.IDLE:
-			# TODO: Make the shadow wander
 			pass
 		STATES.ATTACKING:
 			follow_target(delta)
@@ -43,8 +50,27 @@ func _physics_process(delta: float) -> void:
 					state = STATES.IDLE
 			
 
-
-
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('player'):
 		body._die()
+		
+func _select_random_point():
+	var randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
+	var point = position + randomVec
+	if point.x > limitX || point.x < -limitX || point.y > limitY || point.y < -limitY:
+		point = null
+	return point
+		
+
+func _prueba():
+	var tween = get_node("Tween")
+	var point = _select_random_point()
+	if point != null:
+		tween.interpolate_property(self, "position",
+			position, _select_random_point(), 1,
+			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
+	
+func _on_IdleTimer_timeout():
+	_prueba()
+	$IdleTimer.wait_time = rand_range(2, 6)

@@ -9,7 +9,7 @@
 [ext_resource path="res://Niveles/Areas/AreaDeSombras.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 960, 605.544 )
+extents = Vector2( 960, 541.412 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 960, 540 )
@@ -32,7 +32,7 @@ position = Vector2( 11.9865, -2.99664 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escena1/Area2D"]
-position = Vector2( 950.079, 529.734 )
+position = Vector2( 946.715, 529.734 )
 shape = SubResource( 1 )
 
 [node name="Area2D2" type="Area2D" parent="Escena1"]
@@ -88,6 +88,7 @@ position = Vector2( 958.451, 537.285 )
 shape = SubResource( 4 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
+position = Vector2( 466.137, 77.0815 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -80.0
@@ -138,7 +139,7 @@ speed = 250.0
 
 [node name="Sombra3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1721.7, 2105.01 )
-speed = 400.0
+speed = 500.0
 
 [node name="Sombra17" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1793.7, 1321.01 )
@@ -150,11 +151,10 @@ speed = 300.0
 
 [node name="Sombra5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1589.79, 2494.64 )
-speed = 100.0
 
 [node name="Sombra10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1570.2, 520.096 )
-speed = 400.0
+position = Vector2( 1566.84, 526.823 )
+speed = 450.0
 
 [node name="Sombra11" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1448.84, 578.53 )
