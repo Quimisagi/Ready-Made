@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escena1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Recuerdo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mundo.gd" type="Script" id=4]
 [ext_resource path="res://Fader.gd" type="Script" id=5]
+[ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Niveles/Areas/AreaDeSombras.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 960, 540 )
+extents = Vector2( 960, 605.544 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 960, 540 )
@@ -26,12 +28,27 @@ modulate = Color( 0.533333, 0.309804, 0.309804, 1 )
 position = Vector2( 0, 152.391 )
 
 [node name="Area2D" type="Area2D" parent="Escena1"]
-monitoring = false
-collision_layer = 2
-collision_mask = 0
+position = Vector2( 11.9865, -2.99664 )
+script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escena1/Area2D"]
-position = Vector2( 955.742, 537.285 )
+position = Vector2( 950.079, 529.734 )
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="Escena1"]
+position = Vector2( -13.6088, 1150.14 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escena1/Area2D2"]
+position = Vector2( 950.079, 529.734 )
+shape = SubResource( 1 )
+
+[node name="Area2D3" type="Area2D" parent="Escena1"]
+position = Vector2( -0.895264, 2057.04 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escena1/Area2D3"]
+position = Vector2( 950.079, 529.734 )
 shape = SubResource( 1 )
 
 [node name="Escena2" parent="." instance=ExtResource( 2 )]
@@ -102,5 +119,73 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sombra" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1444.01, 317.804 )
+speed = 250.0
+
+[node name="Sombra15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1071.68, 2534.85 )
+speed = 250.0
+
+[node name="Sombra16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1311.68, 3150.85 )
+speed = 250.0
+
+[node name="Sombra2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 682.354, 926.237 )
+speed = 250.0
+
+[node name="Sombra3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1721.7, 2105.01 )
+speed = 400.0
+
+[node name="Sombra17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1793.7, 1321.01 )
+speed = 400.0
+
+[node name="Sombra4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1297.95, 896.352 )
+speed = 300.0
+
+[node name="Sombra5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1589.79, 2494.64 )
+speed = 100.0
+
+[node name="Sombra10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1570.2, 520.096 )
+speed = 400.0
+
+[node name="Sombra11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1448.84, 578.53 )
+speed = 50.0
+
+[node name="Sombra6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 243.348, 2042.1 )
+speed = 250.0
+
+[node name="Sombra12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 305.573, 1708.35 )
+speed = 400.0
+
+[node name="Sombra14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 377.492, 2565.38 )
+speed = 400.0
+
+[node name="Sombra13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1852.72, 1878.05 )
+speed = 300.0
+
+[node name="Sombra7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1670.31, 1680.36 )
+speed = 250.0
+
+[node name="Sombra8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1556.36, 3012.23 )
+speed = 250.0
+
+[node name="Sombra9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 563.93, 3198.91 )
+speed = 250.0
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
 [connection signal="area_entered" from="Escena2/cinematica" to="Jugador" method="_on_cinematica_area_entered"]
