@@ -44,10 +44,15 @@ func _select_random_points():
 		array.append(point)
 	return array
 	
+func point_collides_with_shape(point: Vector2) -> bool:
+	var collisions = get_world_2d().direct_space_state.intersect_point(point)
+	return collisions.size() > 0
+	
+	
 func generate_point_within_the_limit():
 	var randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
-	var point = position + randomVec
-	while point.x > initial_position.x + limitX || point.x < initial_position.x - limitX || point.y > initial_position.y +limitY || point.y < initial_position.y -limitY:
+	var point = initial_position + randomVec
+	while point_collides_with_shape(point):
 		randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
 		point = position + randomVec
 	return point
