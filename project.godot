@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GameLabJam"
-run/main_scene="res://Mundo.tscn"
+run/main_scene="res://Escenas/Escena1.tscn"
 config/icon="res://icon.png"
 
 [display]

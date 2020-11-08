@@ -47,9 +47,9 @@ func _select_random_points():
 func generate_point_within_the_limit():
 	var randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
 	var point = position + randomVec
-	while point.x > limitX || point.x < -limitX || point.y > limitY || point.y < -limitY:
-		randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
-		point = position + randomVec
+#	while point.x > limitX || point.x < -limitX || point.y > limitY || point.y < -limitY:
+#		randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
+#		point = position + randomVec
 	return point
 
 func _get_point_of_curve_path(points_array: Array, t: float):

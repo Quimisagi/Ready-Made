@@ -3,12 +3,15 @@ extends KinematicBody2D
 enum STATES {IDLE, ATTACKING, RETURNING_TO_ORIGIN}
 var state: int = STATES.IDLE
 var target: Node2D
-export var speed: float = 100 #px/s
+var attack_range: float = 400
+export var speed: float = 250 #px/s
 var initial_position: Vector2
 var wasSpawned: bool = false
 
 func _ready() -> void:
-	initial_position = position
+	initial_position = global_position
+	target = get_tree().get_nodes_in_group('player')[0]
+	speed = speed + (randf()*50 - 25)
 	
 func change_to_attack_mode(target):
 	self.target = target
@@ -23,17 +26,22 @@ func follow_target(delta: float):
 	
 func return_to_origin() -> bool:
 	#TODO add logic
-	return position.is_equal_approx(initial_position)
+	var dir = (initial_position - global_position).normalized()
+	move_and_slide(dir * speed)
+	return position.distance_squared_to(initial_position) < speed * 0.032
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	match state:
 		STATES.IDLE:
-			# TODO: Make the shadow wander
-			pass
+			if target:
+				if target.global_position.distance_to(initial_position) < attack_range:
+					state = STATES.ATTACKING
 		STATES.ATTACKING:
 			follow_target(delta)
+			if initial_position.distance_to(global_position) > attack_range:
+				state = STATES.RETURNING_TO_ORIGIN
 		STATES.RETURNING_TO_ORIGIN:
 			var arrived = return_to_origin()
 			if arrived:
@@ -42,3 +50,7 @@ func _physics_process(delta: float) -> void:
 				else:
 					state = STATES.IDLE
 			
+	
+func _on_Area2D_body_entered(body):
+	if body.is_in_group('player'):
+		body._die()
