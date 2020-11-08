@@ -49,3 +49,6 @@ func _on_Cinematica_area_entered(area):
 func _check_if_memories_completed():
 	var mundo = get_tree().get_root().get_node("Mundo")
 	mundo._are_memories_collected(collected_memories)
+	
+func _die():
+	queue_free()
