@@ -37,19 +37,15 @@ func _on_RoomArea_area_entered(area):
 	var collision_shape = area.get_node("CollisionShape2D")
 	var size = collision_shape.shape.extents*2
 
-
 	cam.limit_top = collision_shape.global_position.y - size.y/2
 	cam.limit_left = collision_shape.global_position.x - size.x/2
 
 	cam.limit_bottom = cam.limit_top + size.y
 	cam.limit_right = cam.limit_left + size.x
 	
-
-
-
-
-	
-
-
 func _on_Cinematica_area_entered(area):
 	cam.position.x = 100
+	
+func _check_if_memories_completed():
+	var mundo = get_tree().get_root().get_node("Mundo")
+	mundo._are_memories_collected(collected_memories)
