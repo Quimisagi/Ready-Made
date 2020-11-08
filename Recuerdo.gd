@@ -23,9 +23,10 @@ func _process(delta):
 	_follow_random_curve_path(delta)
 	
 func _on_PlayerDetector_body_entered(body):
-	body.collected_memories += 1
-	body._check_if_memories_completed()
-	queue_free()
+	if body.is_in_group('player'):
+		body.collected_memories += 1
+		body._check_if_memories_completed()
+		queue_free()
 
 func _make_interpolations(points_array: Array, t: float):
 	var interpolations_array = []
