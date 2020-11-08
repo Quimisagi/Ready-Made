@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var MAX_SPEED = 200
+export var MAX_SPEED = 200
 var ACCEL = 2000
 var motion = Vector2.ZERO
 var collected_memories = 0
@@ -33,17 +33,6 @@ func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
 
-
-func _on_RoomArea_area_entered(area):
-	pass
-#	var collision_shape = area.get_node("CollisionShape2D")
-#	var size = collision_shape.shape.extents*2
-#
-#	cam.limit_top = collision_shape.global_position.y - size.y/2
-#	cam.limit_left = collision_shape.global_position.x - size.x/2
-#
-#	cam.limit_bottom = cam.limit_top + size.y
-#	cam.limit_right = cam.limit_left + size.x
 	
 func _on_Cinematica_area_entered(area):
 	cam.position.x = 100
@@ -54,4 +43,3 @@ func _check_if_memories_completed():
 	
 func _die():
 	emit_signal("died")
-#	queue_free()

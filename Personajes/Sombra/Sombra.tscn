@@ -19,9 +19,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.306633, 0.306633 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=[
-"shadows",
-]]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.24319, 1.16 )
 shape = SubResource( 1 )
 

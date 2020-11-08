@@ -6,6 +6,7 @@
 [ext_resource path="res://Mundo.gd" type="Script" id=4]
 [ext_resource path="res://Recuerdo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Fader.gd" type="Script" id=6]
+[ext_resource path="res://Audio/fire.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120.526, 2203.55 )
@@ -13,15 +14,18 @@ extents = Vector2( 120.526, 2203.55 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2214.13, 157.155 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 965.014, 553.086 )
-
 [node name="Mundo" type="Node2D"]
-position = Vector2( -15.4314, 3266.93 )
+position = Vector2( 0, 8 )
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_group_": true
+"_editor_description_": ""
 }
+
+[node name="LimitBottomLeft" type="Position2D" parent="."]
+position = Vector2( 4.23779, 1080 )
+
+[node name="LimitTopRight" type="Position2D" parent="."]
+position = Vector2( 3849.02, -3259.17 )
 
 [node name="Escenario" type="StaticBody2D" parent="."]
 
@@ -32,7 +36,7 @@ texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Escenario"]
 position = Vector2( 22.6531, 279.387 )
-polygon = PoolVector2Array( -9.02759, -12.4497, 187.298, -87.96, 232.448, -352.934, 486.719, -547.875, 707.782, -585.561, 1136.16, -575.482, 1297.29, -714.692, 1579.65, -872.823, 1645.16, -1074.41, 1972.74, -1129.85, 2199.53, -1255.84, 2573.41, -1348.98, 2607.74, -1538.06, 2451.51, -1724.53, 2239.85, -1900.92, 1976.88, -2073.87, 1871.17, -2172.03, 1599.81, -1810.2, 1428.46, -1638.86, 1070.64, -1533.02, 969.845, -1391.91, 828.734, -1407.03, 491.075, -1502.78, 172.196, -1628.36, -9.02759, -1771.83 )
+polygon = PoolVector2Array( -9.02759, -12.4497, 187.298, -87.96, 232.448, -352.934, 486.719, -547.875, 707.782, -585.561, 1136.16, -575.482, 1297.29, -714.692, 1579.65, -872.823, 1645.16, -1074.41, 1972.74, -1129.85, 2199.53, -1255.84, 2573.41, -1348.98, 2607.74, -1538.06, 2451.51, -1724.53, 2239.85, -1900.92, 1976.88, -2073.87, 1898.01, -2116.13, 1805.94, -2093.9, 1688.47, -1890.71, 1599.81, -1810.2, 1428.46, -1638.86, 1070.64, -1533.02, 969.845, -1391.91, 828.734, -1407.03, 491.075, -1502.78, 172.196, -1628.36, -9.02759, -1771.83 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario"]
 position = Vector2( -107.756, -1113.48 )
@@ -70,7 +74,7 @@ position = Vector2( 3510.64, -1565.92 )
 position = Vector2( 2652.48, -1642.2 )
 
 [node name="Sombra6" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 2845.3, -1949.44 )
+position = Vector2( 2523.15, -1956.17 )
 
 [node name="Sombra2" parent="Sombras" instance=ExtResource( 3 )]
 position = Vector2( 2555.68, -637.853 )
@@ -80,92 +84,6 @@ position = Vector2( 2991.53, -526.301 )
 
 [node name="Sombra4" parent="Sombras" instance=ExtResource( 3 )]
 position = Vector2( 1662.07, -479.658 )
-
-[node name="Areas" type="Node2D" parent="."]
-visible = false
-
-[node name="Area2D" type="Area2D" parent="Areas"]
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D"]
-position = Vector2( 956.123, 537.522 )
-shape = SubResource( 3 )
-
-[node name="Area2D2" type="Area2D" parent="Areas"]
-position = Vector2( 0, -1075.04 )
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D2"]
-position = Vector2( 956.123, 537.522 )
-shape = SubResource( 3 )
-
-[node name="Area2D3" type="Area2D" parent="Areas"]
-position = Vector2( 1931.27, -1075.04 )
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D3"]
-position = Vector2( 956.123, 537.522 )
-shape = SubResource( 3 )
-
-[node name="Area2D7" type="Area2D" parent="Areas"]
-position = Vector2( 1931.27, 18.323 )
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D7"]
-position = Vector2( 956.123, 537.522 )
-shape = SubResource( 3 )
-
-[node name="Area2D4" type="Area2D" parent="Areas"]
-position = Vector2( 4.23779, -2176.88 )
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D4"]
-position = Vector2( 956.123, 537.522 )
-shape = SubResource( 3 )
-
-[node name="Area2D5" type="Area2D" parent="Areas"]
-position = Vector2( 1931.27, -2176.88 )
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D5"]
-position = Vector2( 956.123, 537.522 )
-shape = SubResource( 3 )
-
-[node name="Area2D6" type="Area2D" parent="Areas"]
-position = Vector2( 1931.27, -3266.03 )
-collision_layer = 2
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D6"]
-position = Vector2( 956.123, 537.522 )
-shape = SubResource( 3 )
 
 [node name="Recuerdos" type="Node2D" parent="."]
 
@@ -181,8 +99,12 @@ position = Vector2( 3514.38, -2890.71 )
 [node name="Node2D4" parent="Recuerdos" instance=ExtResource( 5 )]
 position = Vector2( 1234.9, -1621.47 )
 
+[node name="Node2D5" parent="Recuerdos" instance=ExtResource( 5 )]
+position = Vector2( 3234.31, 711.265 )
+
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
-position = Vector2( 406.31, 711.056 )
+position = Vector2( 411.654, 767.419 )
+MAX_SPEED = 220
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -194,6 +116,10 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 
