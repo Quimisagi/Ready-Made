@@ -24,11 +24,11 @@ func follow_target(delta: float):
 	var dir = (target.global_position - global_position).normalized()
 	move_and_slide(dir * speed)
 	
-func return_to_origin() -> bool:
+func return_to_origin(delta) -> bool:
 	#TODO add logic
 	var dir = (initial_position - global_position).normalized()
 	move_and_slide(dir * speed)
-	return position.distance_squared_to(initial_position) < speed * 0.032
+	return global_position.distance_to(initial_position) < speed * delta
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			if initial_position.distance_to(global_position) > attack_range:
 				state = STATES.RETURNING_TO_ORIGIN
 		STATES.RETURNING_TO_ORIGIN:
-			var arrived = return_to_origin()
+			var arrived = return_to_origin(delta)
 			if arrived:
 				if wasSpawned:
 					queue_free()
