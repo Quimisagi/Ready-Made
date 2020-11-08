@@ -50,6 +50,11 @@ shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3840
+limit_bottom = 4320
+editor_draw_limits = true
 editor_draw_drag_margin = true
 [connection signal="area_entered" from="RoomArea" to="." method="_on_RoomArea_area_entered"]
 [connection signal="area_entered" from="Cinematica" to="." method="_on_Cinematica_area_entered"]
