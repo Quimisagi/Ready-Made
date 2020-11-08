@@ -18,4 +18,3 @@ func _process(delta):
 
 func _on_Mundo_memories_completed():
 	fadeIn = true
-	rect_position = get_tree().get_root().get_node("Mundo").get_node("Jugador").global_position
