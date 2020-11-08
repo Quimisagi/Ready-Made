@@ -7,16 +7,16 @@ var max_speed = 0.15
 var speed = 0
 var active = true
 var movement_range = 350
-var limitX = 1200
-var limitY = 400
+var limitX = 600
+var limitY = 350
 var min_points = 6
 var max_points = 15
+var initial_position = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	limitX = limitX + position.x
-	limitY = limitY + position.y
+	initial_position = position
 	randomize()
 	
 func _process(delta):
@@ -47,9 +47,9 @@ func _select_random_points():
 func generate_point_within_the_limit():
 	var randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
 	var point = position + randomVec
-#	while point.x > limitX || point.x < -limitX || point.y > limitY || point.y < -limitY:
-#		randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
-#		point = position + randomVec
+	while point.x > initial_position.x + limitX || point.x < initial_position.x - limitX || point.y > initial_position.y +limitY || point.y < initial_position.y -limitY:
+		randomVec = Vector2(rand_range(-movement_range, movement_range), rand_range(-movement_range, movement_range))
+		point = position + randomVec
 	return point
 
 func _get_point_of_curve_path(points_array: Array, t: float):
