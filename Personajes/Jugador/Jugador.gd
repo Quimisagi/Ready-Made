@@ -10,6 +10,23 @@ signal collected_new_memory
 
 onready var cam = $Camera2D
 
+func play_animation(axis: Vector2) -> void:
+	if axis.length() == 0:
+		$AnimatedSprite.play('idle')
+	elif axis.y < 0:
+		change_animation('up')
+	elif axis.y > 0:
+		change_animation('down')
+	elif axis.x > 0:
+		change_animation('right')
+		$AnimatedSprite.flip_h = false
+	else:
+		change_animation('left')
+		$AnimatedSprite.flip_h = true
+			
+func change_animation(animation_name: String) -> void:
+	if not $AnimatedSprite.animation == animation_name:
+		$AnimatedSprite.play(animation_name)
 
 func _physics_process(delta):
 	var axis = get_input_axis()
@@ -18,6 +35,7 @@ func _physics_process(delta):
 	else: 
 		apply_movement(axis* ACCEL *delta)
 	motion = move_and_slide(motion)
+	play_animation(axis)
 
 
 func get_input_axis():
