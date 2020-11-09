@@ -45,7 +45,7 @@ func _select_random_points():
 	return array
 	
 func point_collides_with_shape(point: Vector2) -> bool:
-	var collisions = get_world_2d().direct_space_state.intersect_point(point)
+	var collisions = get_world_2d().direct_space_state.intersect_ray(position, point)
 	return collisions.size() > 0
 	
 	
