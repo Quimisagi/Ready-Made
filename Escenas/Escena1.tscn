@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Niveles/Escenarios/Wireframe_Level-1.png" type="Texture" id=1]
 [ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Escenas/Mundo.gd" type="Script" id=4]
 [ext_resource path="res://Objetos/Recuerdos/Recuerdo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/Fader.gd" type="Script" id=6]
+[ext_resource path="res://Objetos/Barrera/Barrera.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Audio/fire.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -13,6 +14,16 @@ extents = Vector2( 120.526, 2203.55 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2214.13, 157.155 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 29.1263, 141.035 )
+
+[sub_resource type="OpenSimplexNoise" id=4]
+
+[sub_resource type="NoiseTexture" id=5]
+width = 69
+height = 291
+noise = SubResource( 4 )
 
 [node name="Mundo" type="Node2D"]
 position = Vector2( 0, 8 )
@@ -61,6 +72,17 @@ polygon = PoolVector2Array( -7.4248, 1.05933, 1.56519, -91.8358, 11.5447, -274.7
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Escenario"]
 position = Vector2( 3841.55, -1731.91 )
 polygon = PoolVector2Array( 24.9478, 38.2947, -136.332, -122.509, -314.512, -193.781, -400.038, -200.908, -806.288, -450.36, -1127.01, -543.013, -1262.43, -600.031, -1326.57, -763.956, -1390.24, -978.906, -1152.65, -1018.5, -1055.74, -984.899, -870.433, -1049.04, -628.109, -1077.55, -457.056, -1027.66, -364.403, -963.517, -66.5322, -1012.85, -9.96387, -1182.55, -8.04321, -1405.4, -157.714, -1526.57, -357.275, -1505.18, -462.512, -1437.11, -592.62, -1510.65, -742.143, -1419.66, -1005.57, -1374.89, -1237.5, -1471.05, -1447.74, -1334.13, -1604.53, -1191.59, -1811.22, -1056.17, -1825.48, -714.066, -1825.48, -386.215, -2032.16, -293.561, -2303, -286.434, -2680.74, -357.706, -2716.37, -443.232, -3842.47, -443.232, -3821.09, -1519.44, 405.489, -1812.29 )
+
+[node name="Barrera" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1889.36, -1934.31 )
+memories_required = 4
+
+[node name="CollisionShape2D" parent="Barrera" index="0"]
+position = Vector2( 2.24744, -2.24756 )
+shape = SubResource( 3 )
+
+[node name="Sprite" parent="Barrera" index="1"]
+texture = SubResource( 5 )
 
 [node name="Sombras" type="Node2D" parent="."]
 
@@ -121,6 +143,9 @@ __meta__ = {
 stream = ExtResource( 8 )
 autoplay = true
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
+[connection signal="collected_new_memory" from="Jugador" to="Barrera" method="_on_Jugador_collected_new_memory"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
+
+[editable path="Barrera"]
 
 [editable path="Jugador"]

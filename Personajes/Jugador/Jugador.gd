@@ -4,7 +4,9 @@ export var MAX_SPEED = 200
 var ACCEL = 2000
 var motion = Vector2.ZERO
 var collected_memories = 0
+
 signal died
+signal collected_new_memory
 
 onready var cam = $Camera2D
 
@@ -40,6 +42,7 @@ func _on_Cinematica_area_entered(area):
 	
 func _check_if_memories_completed():
 	var mundo = get_tree().get_root().get_node("Mundo")
+	emit_signal('collected_new_memory', collected_memories)
 	mundo._are_memories_collected(collected_memories)
 	
 func _die():
