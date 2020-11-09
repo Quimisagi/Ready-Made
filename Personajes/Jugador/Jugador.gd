@@ -5,6 +5,7 @@ var ACCEL = 2000
 var motion = Vector2.ZERO
 var collected_memories = 0
 var is_walking = false
+var is_active = true
 
 signal died
 signal collected_new_memory
@@ -36,13 +37,18 @@ func change_animation(animation_name: String) -> void:
 		$AnimatedSprite.play(animation_name)
 
 func _physics_process(delta):
-	var axis = get_input_axis()
-	if axis == Vector2.ZERO:
-		apply_friction(ACCEL * delta)
-	else: 
-		apply_movement(axis* ACCEL *delta)
-	motion = move_and_slide(motion)
-	play_animation(axis)
+	if is_active:
+		var axis = get_input_axis()
+		if axis == Vector2.ZERO:
+			apply_friction(ACCEL * delta)
+		else: 
+			apply_movement(axis* ACCEL *delta)
+		motion = move_and_slide(motion)
+		play_animation(axis)
+	else:
+		$AnimatedSprite.play('idle')
+		is_walking = false
+		$AudioStreamPlayer2D.stop()
 
 
 func get_input_axis():
@@ -60,7 +66,6 @@ func apply_friction(amount):
 func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
-
 	
 func _on_Cinematica_area_entered(area):
 	cam.position.x = 100

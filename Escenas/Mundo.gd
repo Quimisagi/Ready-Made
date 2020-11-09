@@ -15,6 +15,7 @@ func _ready() -> void:
 func _are_memories_collected(var mem):
 	if mem == MEMORIES_TO_RECOVER:
 		emit_signal("memories_completed")
+		$Jugador.is_active = false
 
 func _on_Jugador_died() -> void:
 	$Jugador.position = last_checkpoint
