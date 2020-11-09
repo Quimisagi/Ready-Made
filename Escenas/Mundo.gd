@@ -17,8 +17,10 @@ func _are_memories_collected(var mem):
 		emit_signal("memories_completed")
 		$Jugador.is_active = false
 
-func _on_Jugador_died() -> void:
+func _on_Jugador_died(wait_time) -> void:
+	yield(get_tree().create_timer(wait_time - 1), "timeout")
 	$Jugador.position = last_checkpoint
+	$Jugador.is_active = true
 
 func _on_Checkpoint_arrived_at_checkpoint(checkpoint_position:Vector2) -> void:
 	last_checkpoint = checkpoint_position

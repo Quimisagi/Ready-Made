@@ -76,7 +76,8 @@ func _check_if_memories_completed():
 	mundo._are_memories_collected(collected_memories)
 	
 func _die():
-	emit_signal("died")
+	emit_signal("died", 2)
+	is_active = false
 	
 func _step():
 	if !is_walking:

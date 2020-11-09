@@ -18,6 +18,7 @@ var initial_position = 0
 func _ready():
 	initial_position = position
 	randomize()
+	$esfera/AnimationPlayer.play("color_changing")
 	
 func _process(delta):
 	_follow_random_curve_path(delta)
