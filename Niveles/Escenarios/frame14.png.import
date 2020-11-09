@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wireframe_Level-1.png-5153a8271d5c009ab98e896671d4c8c6.stex"
+path="res://.import/frame14.png-435b7891130301dc6047c0381c09fb9f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Niveles/Escenarios/Wireframe_Level-1.png"
-dest_files=[ "res://.import/Wireframe_Level-1.png-5153a8271d5c009ab98e896671d4c8c6.stex" ]
+source_file="res://Niveles/Escenarios/frame14.png"
+dest_files=[ "res://.import/frame14.png-435b7891130301dc6047c0381c09fb9f.stex" ]
 
 [params]
 

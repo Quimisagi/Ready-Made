@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://Niveles/Escenarios/Wireframe_Level-1.png" type="Texture" id=1]
 [ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Escenas/Mundo.gd" type="Script" id=4]
@@ -9,12 +8,28 @@
 [ext_resource path="res://Objetos/Barrera/Barrera.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Audio/fire.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Niveles/Checkpoint/Checkpoint.gd" type="Script" id=9]
+[ext_resource path="res://Niveles/Escenarios/frame7.png" type="Texture" id=10]
+[ext_resource path="res://Niveles/Escenarios/frame16.png" type="Texture" id=11]
+[ext_resource path="res://Niveles/Escenarios/frame14.png" type="Texture" id=12]
+[ext_resource path="res://Niveles/Escenarios/frame11.png" type="Texture" id=13]
+[ext_resource path="res://Niveles/Escenarios/frame6.png" type="Texture" id=14]
+[ext_resource path="res://Niveles/Escenarios/frame1.png" type="Texture" id=15]
+[ext_resource path="res://Niveles/Escenarios/frame2.png" type="Texture" id=16]
+[ext_resource path="res://Niveles/Escenarios/frame3.png" type="Texture" id=17]
+[ext_resource path="res://Niveles/Escenarios/frame8.png" type="Texture" id=18]
+[ext_resource path="res://Niveles/Escenarios/frame9.png" type="Texture" id=19]
+[ext_resource path="res://Niveles/Escenarios/frame5.png" type="Texture" id=20]
+[ext_resource path="res://Niveles/Escenarios/frame15.png" type="Texture" id=21]
+[ext_resource path="res://Niveles/Escenarios/frame13.png" type="Texture" id=22]
+[ext_resource path="res://Niveles/Escenarios/frame4.png" type="Texture" id=23]
+[ext_resource path="res://Niveles/Escenarios/frame10.png" type="Texture" id=24]
+[ext_resource path="res://Niveles/Escenarios/frame12.png" type="Texture" id=25]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 120.526, 2203.55 )
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 123.58, 2318.51 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 2214.13, 157.155 )
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 4026.13, 199.585 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 29.1263, 141.035 )
@@ -28,6 +43,9 @@ noise = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 36.3345, 663.543 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 48.8948, 1223.25 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 35.4673, 364.046 )
@@ -46,45 +64,110 @@ __meta__ = {
 }
 
 [node name="LimitTopRight" type="Position2D" parent="."]
-position = Vector2( 3849.02, -3259.17 )
+position = Vector2( 7680, -3248 )
 __meta__ = {
 "_editor_description_": "Place at the top right limit of the level. This node is used to calculate the camera limits"
 }
 
 [node name="Escenario" type="StaticBody2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Escenario"]
-position = Vector2( 1923.32, -1091.12 )
-scale = Vector2( 6.55, 6.55 )
-texture = ExtResource( 1 )
+[node name="Sprites" type="Node2D" parent="Escenario"]
+
+[node name="frame1" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, -2708 )
+texture = ExtResource( 15 )
+
+[node name="frame2" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, -2708 )
+texture = ExtResource( 16 )
+
+[node name="frame3" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, -2708 )
+texture = ExtResource( 17 )
+
+[node name="frame4" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, -2708 )
+texture = ExtResource( 23 )
+
+[node name="frame5" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, -1628 )
+texture = ExtResource( 20 )
+
+[node name="frame6" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, -1628 )
+texture = ExtResource( 14 )
+
+[node name="frame7" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, -1628 )
+texture = ExtResource( 10 )
+
+[node name="frame8" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, -1628 )
+texture = ExtResource( 18 )
+
+[node name="frame9" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, -548 )
+texture = ExtResource( 19 )
+
+[node name="frame10" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, -548 )
+texture = ExtResource( 24 )
+
+[node name="frame11" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, -548 )
+texture = ExtResource( 13 )
+
+[node name="frame16" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, 532 )
+texture = ExtResource( 11 )
+
+[node name="frame15" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, 532 )
+texture = ExtResource( 21 )
+
+[node name="frame14" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, 532 )
+texture = ExtResource( 12 )
+
+[node name="frame13" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, 532 )
+texture = ExtResource( 22 )
+
+[node name="frame12" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, -548 )
+texture = ExtResource( 25 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Escenario"]
-position = Vector2( 22.6531, 279.387 )
-polygon = PoolVector2Array( -9.02759, -12.4497, 187.298, -87.96, 232.448, -352.934, 486.719, -547.875, 707.782, -585.561, 1136.16, -575.482, 1297.29, -714.692, 1579.65, -872.823, 1645.16, -1074.41, 1972.74, -1129.85, 2199.53, -1255.84, 2573.41, -1348.98, 2607.74, -1538.06, 2451.51, -1724.53, 2239.85, -1900.92, 1976.88, -2073.87, 1898.01, -2116.13, 1805.94, -2093.9, 1688.47, -1890.71, 1599.81, -1810.2, 1428.46, -1638.86, 1070.64, -1533.02, 969.845, -1391.91, 828.734, -1407.03, 491.075, -1502.78, 172.196, -1628.36, -9.02759, -1771.83 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario"]
-position = Vector2( -107.756, -1113.48 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Escenario"]
-position = Vector2( 3960.05, -1113.48 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Escenario"]
-position = Vector2( 1934.34, 1235.86 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Escenario"]
-position = Vector2( 1910.36, -3426.87 )
-shape = SubResource( 2 )
+polygon = PoolVector2Array( -3.50726, -0.380554, 0.38208, -1588, 291.689, -1332.57, 745.261, -1201.54, 881.333, -1282.18, 1148.44, -1272.1, 1259.31, -1337.61, 1455.86, -1382.97, 1586.89, -1438.41, 1758.24, -1634.95, 1808.63, -1816.38, 1944.71, -1796.22, 2151.33, -1695.43, 2312.6, -1584.56, 2398.28, -1483.76, 2332.76, -1332.57, 2252.13, -1272.1, 2242.05, -1151.14, 2206.77, -1065.47, 2095.9, -1035.23, 2035.42, -989.874, 1969.9, -924.359, 1803.59, -858.843, 1672.56, -798.366, 1642.32, -621.978, 1506.25, -591.739, 1435.7, -531.263, 1360.1, -475.827, 1264.35, -420.39, 1193.79, -319.596, 1143.4, -289.358, 961.968, -344.795, 775.499, -329.676, 649.507, -264.16, 543.674, -259.12, 452.959, -284.319, 275.57, -119.229, 161.277, -23.9849, 66.0333, 331.593, 47.6702, 712.573, 153.384, 840.94, 274.2, 976.858, 485.628, 1007.06, 757.464, 1014.61, 946.239, 991.96, 1112.36, 886.246, 1308.69, 757.879, 1489.91, 523.799, 1701.34, 402.983, 1701.34, 251.963, 1890.11, 17.8818, 2124.19, -80.281, 2380.93, 2.78003, 2637.66, 63.1877, 2750.93, 289.718, 2720.72, 493.594, 2607.46, 697.471, 2758.48, 780.532, 2969.91, 825.838, 3120.93, 984.409, 3271.94, 893.797, 3498.48, 954.205, 3589.09, 780.532, 3536.23, 599.309, 3302.15, 395.432, 3234.19, 32.9839, 3271.94, -57.6282, 3302.15, -397.423, 3513.58, -374.77, 3755.21, -291.709, 3951.53, -140.689, 4072.35, 85.8408, 4185.62, 214.208, 4208.27, 418.085, 4298.88, 606.86, 4480.1, 644.615, 4887.86, 659.717, 5189.9, 644.615, 5507.04, 554.002, 5605.2, 493.594, 5680.71, 667.267, 5884.59, 561.553, 6096.02, 720.125, 6503.77, 720.125, 6790.71, 772.981, 6987.03, 712.573, 7228.67, 803.185, 7500.5, 682.369, 7689.28, 478.493, 7696.83, 1059.92, -27.8397, 1090.12 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Escenario"]
-position = Vector2( 1288.54, 1075.78 )
-polygon = PoolVector2Array( -7.4248, 1.05933, 1.56519, -91.8358, 11.5447, -274.71, 99.5447, -414.71, 211.545, -538.71, 359.545, -610.71, 447.545, -682.71, 471.545, -854.71, 671.545, -938.71, 799.545, -990.71, 927.545, -938.71, 1051.54, -1006.71, 1251.54, -1014.71, 1439.5, -1018.49, 1555.54, -894.71, 1556.97, -650.078, 1450.18, -505.915, 1399.54, -338.71, 1719.54, -190.71, 1813.26, -100.124, 2058.87, -121.481, 2325.83, -105.463, 2357.87, -377.77, 1941.4, -687.453, 1909.36, -933.064, 1978.78, -1290.8, 2000.13, -1445.64, 2122.94, -1611.16, 2283.12, -1862.11, 2437.96, -2155.78, 2550.09, -2283.92, 2560.77, 6.66345 )
+position = Vector2( 690.504, -3243.7 )
+polygon = PoolVector2Array( 1.8205, -1.67114, 99.3645, 127.827, 206.999, 205.189, 309.589, 314.506, 418.424, 795.927, 548.629, 1015.93, 638.426, 1217.97, 773.122, 1258.38, 975.165, 1208.99, 1082.92, 1182.05, 1302.92, 1141.65, 1343.33, 1060.83, 1316.39, 962.052, 1316.39, 845.316, 1320.88, 719.6, 1275.98, 620.823, 1410.68, 459.189, 1554.36, 306.534, 1720.48, 239.186, 1823.75, 162.859, 1855.18, 68.5718, 2030.28, 86.531, 2173.95, 140.409, 2331.1, 117.96, 2443.35, 73.0615, 2676.82, 32.6531, 2811.51, 46.1223, 2937.23, 176.328, 2896.82, 369.392, 2842.94, 445.719, 2721.72, 508.577, 2587.02, 418.78, 2416.41, 418.78, 2263.75, 436.739, 2079.67, 472.658, 1931.5, 522.046, 1801.3, 544.496, 1742.93, 665.721, 1814.77, 751.029, 1900.07, 822.866, 1962.93, 894.704, 1989.87, 975.521, 2102.12, 980.011, 2200.89, 971.031, 2308.65, 1047.36, 2411.92, 1123.69, 2474.77, 1195.52, 2573.55, 1155.11, 2681.31, 1258.38, 2757.63, 1316.75, 2807.02, 1420.02, 2928.25, 1518.79, 3076.41, 1509.81, 3188.66, 1568.18, 3260.5, 1590.63, 3377.23, 1613.08, 3467.03, 1604.1, 3597.24, 1622.06, 3664.58, 1595.12, 3709.48, 1482.87, 3749.89, 1406.55, 3803.77, 1325.73, 3911.53, 1159.6, 4041.73, 1105.73, 4059.69, 1110.22, 4055.2, 984.501, 4068.67, 921.643, 4050.71, 795.927, 3960.91, 719.6, 3839.69, 764.498, 3785.81, 809.397, 3673.56, 849.805, 3507.44, 804.907, 3435.6, 710.62, 3390.7, 513.067, 3417.64, 351.432, 3484.99, 275.105, 3669.07, 275.105, 3801.16, 442.169, 4086.63, 396.33, 4333.57, 373.88, 4488.47, 447.825, 4875.97, 419.541, 5130.52, 297.919, 5541.34, 293.063, 5936.63, 337.517, 6171.39, 232.865, 6488.17, 156.498, 6636.86, 73.0615, 6816.46, -3.26587 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Escenario"]
-position = Vector2( 3841.55, -1731.91 )
-polygon = PoolVector2Array( 24.9478, 38.2947, -136.332, -122.509, -314.512, -193.781, -400.038, -200.908, -806.288, -450.36, -1127.01, -543.013, -1262.43, -600.031, -1326.57, -763.956, -1390.24, -978.906, -1152.65, -1018.5, -1055.74, -984.899, -870.433, -1049.04, -628.109, -1077.55, -457.056, -1027.66, -364.403, -963.517, -66.5322, -1012.85, -9.96387, -1182.55, -8.04321, -1405.4, -157.714, -1526.57, -357.275, -1505.18, -462.512, -1437.11, -592.62, -1510.65, -742.143, -1419.66, -1005.57, -1374.89, -1237.5, -1471.05, -1447.74, -1334.13, -1604.53, -1191.59, -1811.22, -1056.17, -1825.48, -714.066, -1825.48, -386.215, -2032.16, -293.561, -2303, -286.434, -2680.74, -357.706, -2716.37, -443.232, -3842.47, -443.232, -3821.09, -1519.44, 405.489, -1812.29 )
+position = Vector2( 3712.36, -847.57 )
+polygon = PoolVector2Array( 110.621, -157.634, 305.562, -352.575, 407.271, -411.906, 568.309, -445.808, 678.493, -462.76, 848.007, -403.43, 1034.47, -352.575, 1237.89, -166.11, 1475.21, 62.7339, 1678.63, 359.384, 1788.81, 478.043, 1915.95, 486.519, 2017.65, 647.558, 1890.52, 783.169, 1636.25, 876.401, 1407.4, 952.683, 1187.04, 884.877, 949.715, 800.12, 729.347, 639.082, 678.493, 545.849, 432.697, 494.995, 271.659, 308.529, 59.7666, 139.015, 8.91211, 20.3555 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Escenario"]
+polygon = PoolVector2Array( 6160.31, -521.719, 6384.56, -553.755, 6566.1, -660.542, 6651.53, -681.9, 6726.28, -778.009, 6619.49, -948.868, 6267.09, -948.868, 6042.84, -852.76, 5904.02, -649.864, 5989.45, -511.041 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Escenario"]
+polygon = PoolVector2Array( 6074.88, -83.8916, 6181.67, -201.357, 6405.92, -244.073, 6726.28, -318.824, 6961.21, -436.29, 7068, -532.398, 7345.65, -436.29, 7463.11, -212.036, 7377.68, -41.1768, 7217.5, 300.542, 7110.71, 418.008, 6801.03, 418.008, 6427.28, 353.936, 6256.42, 215.112, 6128.27, 33.5742 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Escenario"]
+polygon = PoolVector2Array( 5288.84, -2071.11, 5362.84, -1889.48, 5457.02, -1748.21, 5638.65, -1647.3, 5827.01, -1640.57, 5981.74, -1660.75, 6156.64, -1485.85, 6311.37, -1277.3, 6607.37, -1122.58, 6815.91, -1068.76, 6990.81, -1351.3, 7145.54, -1633.84, 7219.54, -1808.75, 7414.63, -1963.48, 7515.53, -2010.57, 7724.08, -1950.02, 7710.62, -2683.28, 7024.45, -2427.65, 6721.73, -2394.02, 6526.64, -2515.1, 6271.01, -2535.29, 6170.1, -2454.56, 5894.28, -2494.92, 5611.74, -2535.29, 5430.11, -2427.65, 5335.93, -2360.38 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario"]
+position = Vector2( -118.66, -1084.89 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Escenario"]
+position = Vector2( 7831.55, -1135.74 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Escenario"]
+position = Vector2( 3847.97, -3424.19 )
+shape = SubResource( 9 )
 
 [node name="Barrera" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1889.36, -1934.31 )
@@ -149,14 +232,15 @@ shape = SubResource( 6 )
 
 [node name="Checkpoint2" type="Area2D" parent="Checkpoints"]
 position = Vector2( 3152.88, -1094.6 )
-rotation = 1.57079
+rotation = 1.8652
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint2"]
-shape = SubResource( 6 )
+position = Vector2( 6.59998, -7.59912 )
+shape = SubResource( 10 )
 
 [node name="Checkpoint3" type="Area2D" parent="Checkpoints"]
-position = Vector2( 2254.41, -2577.23 )
+position = Vector2( 4966.3, -2216.84 )
 rotation = 1.57079
 script = ExtResource( 9 )
 
