@@ -25,11 +25,13 @@ func stop_attacking():
 	
 func follow_target(delta: float):
 	var dir = (target.global_position - global_position).normalized()
+	$hands.look_at(target.position)
+	$hands.rotate(-PI/2)
 	move_and_slide(dir * speed)
 	
 func return_to_origin(delta) -> bool:
-	#TODO add logic
 	var dir = (initial_position - global_position).normalized()
+	$hands.rotation = 0
 	move_and_slide(dir * speed)
 	return global_position.distance_to(initial_position) < speed * delta
 	

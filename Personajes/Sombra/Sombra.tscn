@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Personajes/Sombra/Sombra.gd" type="Script" id=1]
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0000.png" type="Texture" id=2]
 [ext_resource path="res://Personajes/Sombra/String_Fantasmistas.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0001.png" type="Texture" id=4]
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0007.png" type="Texture" id=5]
+[ext_resource path="res://Personajes/Sombra/hands.png" type="Texture" id=6]
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0005.png" type="Texture" id=7]
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0004.png" type="Texture" id=8]
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0006.png" type="Texture" id=9]
@@ -32,6 +33,11 @@ height = 21.1566
 "shadows",
 ]]
 script = ExtResource( 1 )
+
+[node name="hands" type="Sprite" parent="."]
+position = Vector2( -0.471939, 2.86102e-06 )
+scale = Vector2( 0.202224, 0.202224 )
+texture = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.471939, 15.102 )
