@@ -13,8 +13,8 @@ func _ready() -> void:
 	target = get_tree().get_nodes_in_group('player')[0]
 	speed = speed + (randf()*50 - 25)
 	
-func change_to_attack_mode(target):
-	self.target = target
+func change_to_attack_mode():
+	$AudioStreamPlayer2D.play()
 	state = STATES.ATTACKING
 
 func stop_attacking():
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		STATES.IDLE:
 			if target:
 				if target.global_position.distance_to(initial_position) < attack_range:
-					state = STATES.ATTACKING
+					change_to_attack_mode()
 		STATES.ATTACKING:
 			follow_target(delta)
 			if initial_position.distance_to(global_position) > attack_range:
