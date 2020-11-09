@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Auto.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objetos/Recuerdos/Recuerdo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Escenas/Mundo.gd" type="Script" id=4]
+[ext_resource path="res://Escenas/Escena2.gd" type="Script" id=4]
+[ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1056.86, 58.2714 )
@@ -12,7 +13,7 @@ extents = Vector2( 1056.86, 58.2714 )
 extents = Vector2( 302.172, 7185.81 )
 
 [node name="Mundo" type="Node2D"]
-position = Vector2( 34.7655, -104.296 )
+position = Vector2( 148.953, -184.228 )
 script = ExtResource( 4 )
 
 [node name="Escena" type="ColorRect" parent="."]
@@ -29,339 +30,209 @@ position = Vector2( 758.517, 8845.69 )
 rotation = 3.14159
 scale = Vector2( 1.75228, 3.6607 )
 
-[node name="Auto" parent="Autos" instance=ExtResource( 2 )]
-position = Vector2( -562.044, -949.177 )
-
 [node name="Auto2" parent="Autos" instance=ExtResource( 2 )]
-position = Vector2( -308.772, -96.5518 )
+position = Vector2( -624.653, -462.817 )
+
+[node name="Auto6" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -296.68, -329.271 )
+
+[node name="Auto7" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -291.455, -204.395 )
+
+[node name="Auto8" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 234.428, -74.0797 )
 
 [node name="Auto3" parent="Autos" instance=ExtResource( 2 )]
-position = Vector2( -94.4858, 162.923 )
+position = Vector2( -293.835, 90.1158 )
 
 [node name="Auto4" parent="Autos" instance=ExtResource( 2 )]
-position = Vector2( -300.501, 347.824 )
+position = Vector2( -293.124, 185.582 )
+
+[node name="Auto9" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -141.557, 250.479 )
+
+[node name="Auto10" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -139.734, 346.935 )
+
+[node name="Auto12" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 17.7478, 443.248 )
+
+[node name="Auto13" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 25.9664, 543.796 )
+
+[node name="Auto14" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -343.322, 646.632 )
+
+[node name="Auto17" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 33.5697, 639.992 )
+
+[node name="Auto18" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 184.902, 639.403 )
+
+[node name="Auto19" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 251.608, 742.903 )
+
+[node name="Auto15" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -504.789, 760.293 )
+
+[node name="Auto20" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 78.614, 742.749 )
+
+[node name="Auto21" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 225.228, 856.792 )
+
+[node name="Auto22" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 60.2866, 858.254 )
+
+[node name="Auto23" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -642.241, 880.184 )
+
+[node name="Auto24" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -455.918, 865.563 )
+
+[node name="Auto25" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -120.659, 1001.03 )
+
+[node name="Auto29" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -509.128, 1100.49 )
+
+[node name="Auto31" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -349.074, 1186.5 )
+
+[node name="Auto32" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -313.124, 1287.51 )
+
+[node name="Auto33" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -158.571, 1286.9 )
+
+[node name="Auto34" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -5.29401, 1287.51 )
+
+[node name="Auto35" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -5.29456, 1387.9 )
+
+[node name="Auto40" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 263.504, 1479.6 )
+
+[node name="Auto41" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 259.286, 1585.59 )
+
+[node name="Auto42" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -632.694, 1482.63 )
+
+[node name="Auto43" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -466.108, 1568.43 )
+
+[node name="Auto44" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 99.0244, 1561.36 )
+
+[node name="Auto45" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -630.587, 1609.81 )
+
+[node name="Auto46" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 164.393, 1688.54 )
+
+[node name="Auto47" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -485.087, 1704.69 )
+
+[node name="Auto48" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -293.194, 1596.69 )
+
+[node name="Auto49" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -27.4983, 1672.39 )
+
+[node name="Auto50" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 243.874, 1790.48 )
+
+[node name="Auto51" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 68.0983, 1805.25 )
+
+[node name="Auto52" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -132.347, 1789.01 )
+
+[node name="Auto53" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -625.753, 1815.58 )
+
+[node name="Auto54" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -462.312, 1833.29 )
+
+[node name="Auto55" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 243.141, 1927.15 )
+
+[node name="Auto56" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 78.6103, 1906.65 )
+
+[node name="Auto57" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -647.685, 1923.51 )
+
+[node name="Auto58" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -485.112, 1939.07 )
+
+[node name="Auto59" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -100.871, 1924.27 )
+
+[node name="Auto36" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -472.847, 1286.88 )
+
+[node name="Auto37" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -631.124, 1382.67 )
+
+[node name="Auto38" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -151.024, 1469.25 )
+
+[node name="Auto39" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -300.529, 1469.91 )
+
+[node name="Auto26" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 32.7954, 1033.7 )
+
+[node name="Auto27" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 91.3044, 1136.41 )
+
+[node name="Auto30" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -657.598, 1098.39 )
+
+[node name="Auto28" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( 259.091, 1136.57 )
+
+[node name="Auto16" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -656.758, 760.293 )
 
 [node name="Auto5" parent="Autos" instance=ExtResource( 2 )]
-position = Vector2( -495.786, 348.851 )
+position = Vector2( -478.456, 266.649 )
+
+[node name="Auto11" parent="Autos" instance=ExtResource( 2 )]
+position = Vector2( -439.676, 344.209 )
 
 [node name="RoadLines" type="Sprite" parent="."]
+visible = false
 position = Vector2( 30.7188, 11717.8 )
 
 [node name="ColorRect" type="ColorRect" parent="RoadLines"]
-margin_left = 892.934
-margin_top = 408.529
-margin_right = 926.934
-margin_bottom = 511.529
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="RoadLines"]
-margin_left = 891.385
-margin_top = -12.7857
-margin_right = 925.385
-margin_bottom = 90.2143
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect3" type="ColorRect" parent="RoadLines"]
-margin_left = 892.934
-margin_top = -398.475
-margin_right = 926.934
-margin_bottom = -295.475
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect4" type="ColorRect" parent="RoadLines"]
-margin_left = 897.879
-margin_top = -724.854
-margin_right = 931.879
-margin_bottom = -621.854
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect5" type="ColorRect" parent="RoadLines"]
-margin_left = 897.879
-margin_top = -1040.85
-margin_right = 931.879
-margin_bottom = -937.854
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect6" type="ColorRect" parent="RoadLines"]
-margin_left = 896.266
-margin_top = -1407.14
-margin_right = 930.266
-margin_bottom = -1304.14
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect7" type="ColorRect" parent="RoadLines"]
-margin_left = 891.425
-margin_top = -1752.45
-margin_right = 925.425
-margin_bottom = -1649.45
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="RoadLines"]
-margin_left = 894.386
-margin_top = -2124.74
-margin_right = 923.386
-margin_bottom = -2021.74
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="RoadLines"]
-margin_left = 892.614
-margin_top = -2440.55
-margin_right = 934.614
-margin_bottom = -2337.55
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="RoadLines"]
-margin_left = 897.443
-margin_top = -2830.14
-margin_right = 939.443
-margin_bottom = -2727.14
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="RoadLines"]
-margin_left = 897.443
-margin_top = -3253.54
-margin_right = 939.443
-margin_bottom = -3150.54
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="RoadLines"]
-margin_left = 900.453
-margin_top = -3641.77
-margin_right = 942.453
-margin_bottom = -3538.77
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect13" type="ColorRect" parent="RoadLines"]
-margin_left = 903.462
-margin_top = -3987.87
-margin_right = 945.462
-margin_bottom = -3884.87
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect14" type="ColorRect" parent="RoadLines"]
-margin_left = 903.0
-margin_top = -4304.0
-margin_right = 945.0
-margin_bottom = -4201.0
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect15" type="ColorRect" parent="RoadLines"]
-margin_left = 905.41
-margin_top = -4610.02
-margin_right = 947.41
-margin_bottom = -4507.02
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect16" type="ColorRect" parent="RoadLines"]
-margin_left = 910.183
-margin_top = -4955.87
-margin_right = 944.183
-margin_bottom = -4852.87
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect17" type="ColorRect" parent="RoadLines"]
-margin_left = 908.634
-margin_top = -5377.19
-margin_right = 942.634
-margin_bottom = -5274.19
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect18" type="ColorRect" parent="RoadLines"]
-margin_left = 910.183
-margin_top = -5762.88
-margin_right = 944.183
-margin_bottom = -5659.88
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect19" type="ColorRect" parent="RoadLines"]
-margin_left = 915.128
-margin_top = -6089.26
-margin_right = 949.128
-margin_bottom = -5986.26
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect20" type="ColorRect" parent="RoadLines"]
-margin_left = 915.128
-margin_top = -6405.25
-margin_right = 949.128
-margin_bottom = -6302.25
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect21" type="ColorRect" parent="RoadLines"]
-margin_left = 913.515
-margin_top = -6771.54
-margin_right = 947.515
-margin_bottom = -6668.54
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect22" type="ColorRect" parent="RoadLines"]
-margin_left = 908.674
-margin_top = -7116.86
-margin_right = 942.674
-margin_bottom = -7013.86
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect23" type="ColorRect" parent="RoadLines"]
-margin_left = 911.636
-margin_top = -7489.15
-margin_right = 940.636
-margin_bottom = -7386.15
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect24" type="ColorRect" parent="RoadLines"]
-margin_left = 909.863
-margin_top = -7804.95
-margin_right = 951.863
-margin_bottom = -7701.95
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect25" type="ColorRect" parent="RoadLines"]
-margin_left = 914.692
-margin_top = -8194.54
-margin_right = 956.692
-margin_bottom = -8091.54
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect26" type="ColorRect" parent="RoadLines"]
-margin_left = 914.692
-margin_top = -8617.94
-margin_right = 956.692
-margin_bottom = -8514.94
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect27" type="ColorRect" parent="RoadLines"]
-margin_left = 917.702
-margin_top = -9006.17
-margin_right = 959.702
-margin_bottom = -8903.17
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect28" type="ColorRect" parent="RoadLines"]
-margin_left = 920.711
-margin_top = -9352.27
-margin_right = 962.711
-margin_bottom = -9249.27
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect29" type="ColorRect" parent="RoadLines"]
-margin_left = 920.249
-margin_top = -9668.4
-margin_right = 962.249
-margin_bottom = -9565.4
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect30" type="ColorRect" parent="RoadLines"]
-margin_left = 922.659
-margin_top = -9974.42
-margin_right = 964.659
-margin_bottom = -9871.42
-color = Color( 0.0235294, 0.0156863, 0.0156863, 1 )
+margin_left = 927.073
+margin_top = -11714.3
+margin_right = 952.073
+margin_bottom = 1580.72
+color = Color( 0.0390625, 0.0358582, 0.0358582, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 987.774, 12433.2 )
+position = Vector2( 943.096, 12324 )
 scale = Vector2( 1.42324, 1.29777 )
 
 [node name="Camera2D2" type="Camera2D" parent="Jugador"]
-position = Vector2( -60.9438, 32.8158 )
+position = Vector2( 1.10736, 36.4312 )
 current = true
-limit_left = 0
-limit_right = 1920
+limit_left = 147
+limit_right = 2067
 limit_bottom = 12960
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 934.822, -57.7117 )
+position = Vector2( 912.5, -49.6759 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -376,5 +247,28 @@ shape = SubResource( 2 )
 position = Vector2( 2218.06, 6760.42 )
 shape = SubResource( 2 )
 
-[node name="Node2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1807.85, 12124.5 )
+[node name="Recuerdos" parent="." instance=ExtResource( 3 )]
+position = Vector2( 971.283, 11643.9 )
+
+[node name="Recuerdos2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 623.509, 9328.83 )
+
+[node name="Recuerdos3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1149.11, 7591.53 )
+
+[node name="Recuerdos5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 931.977, 782.964 )
+
+[node name="Recuerdos4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 242.333, 4994.46 )
+
+[node name="Sombra" parent="." instance=ExtResource( 5 )]
+position = Vector2( 403.781, 7481.59 )
+
+[node name="Sombra2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 965.419, 4125.67 )
+
+[node name="Checkpoint" type="Area2D" parent="."]
+position = Vector2( 969.553, 11043.4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]

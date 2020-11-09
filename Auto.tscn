@@ -1,15 +1,15 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 92.0161, 48.506 )
+extents = Vector2( 70.4298, 45.9407 )
 
 [node name="Sprite" type="StaticBody2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 19.3386
-margin_top = 24.5097
-margin_right = 40.3386
-margin_bottom = 31.5097
+margin_left = 22.6164
+margin_top = 29.8492
+margin_right = 41.6164
+margin_bottom = 35.8492
 rect_scale = Vector2( 6.35561, 12.739 )
 color = Color( 0.619608, 0.141176, 0.141176, 1 )
 __meta__ = {
@@ -17,6 +17,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 83.6957, 69.5028 )
 shape = SubResource( 1 )
 __meta__ = {
