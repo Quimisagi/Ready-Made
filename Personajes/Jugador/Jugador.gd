@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var MAX_SPEED = 260
+export var MAX_SPEED = 250
 var ACCEL = 2000
 var motion = Vector2.ZERO
 var collected_memories = 0
@@ -82,3 +82,4 @@ func _step():
 	if !is_walking:
 		is_walking = true
 		$AudioStreamPlayer2D.play()
+	

@@ -7,8 +7,11 @@ var attack_range: float = 400
 export var speed: float = 175 #px/s
 var initial_position: Vector2
 var wasSpawned: bool = false
+var movement_range = 100
 
 func _ready() -> void:
+	randomize()
+	$IdleTimer.wait_time = rand_range(2, 6)
 	initial_position = global_position
 	target = get_tree().get_nodes_in_group('player')[0]
 	speed = speed + (randf()*50 - 25)
@@ -54,3 +57,21 @@ func _physics_process(delta: float) -> void:
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('player'):
 		body._die()
+		
+func _select_random_point():
+	var randomPoint = Vector2(rand_range(initial_position.x -movement_range, initial_position.x + movement_range), rand_range(initial_position.y - movement_range, initial_position.y + movement_range))
+	return randomPoint
+
+func _tween():
+	var tween = get_node("Tween")
+	var point = _select_random_point()
+	if point != null:
+		tween.interpolate_property(self, "position",
+			position, point, 1,
+			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
+	
+func _on_IdleTimer_timeout():
+	if state == STATES.IDLE:
+		_tween()
+	$IdleTimer.wait_time = rand_range(2, 6)

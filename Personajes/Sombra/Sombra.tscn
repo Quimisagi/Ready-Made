@@ -12,7 +12,7 @@
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0002.png" type="Texture" id=88]
 [ext_resource path="res://Personajes/Sombra/Animaciones/frame0008.png" type="Texture" id=92]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 88 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 92 ) ],
 "loop": true,
@@ -36,8 +36,8 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.471939, 15.102 )
 scale = Vector2( 0.629602, 0.629602 )
-frames = SubResource( 4 )
-frame = 5
+frames = SubResource( 1 )
+frame = 7
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
@@ -54,4 +54,11 @@ shape = SubResource( 3 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = 9.0
+
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
