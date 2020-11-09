@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sonido_Recuerdos_.ogg-bef3c213a9860331856a62eae465dd8b.oggstr"
+
+[deps]
+
+source_file="res://Objetos/Recuerdos/Sonido_Recuerdos_.ogg"
+dest_files=[ "res://.import/Sonido_Recuerdos_.ogg-bef3c213a9860331856a62eae465dd8b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

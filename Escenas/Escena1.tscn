@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=3]
@@ -30,16 +30,6 @@ extents = Vector2( 123.58, 2318.51 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4026.13, 199.585 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 29.1263, 141.035 )
-
-[sub_resource type="OpenSimplexNoise" id=4]
-
-[sub_resource type="NoiseTexture" id=5]
-width = 69
-height = 291
-noise = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 36.3345, 663.543 )
@@ -169,56 +159,136 @@ shape = SubResource( 1 )
 position = Vector2( 3847.97, -3424.19 )
 shape = SubResource( 2 )
 
-[node name="Barrera" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1889.36, -1934.31 )
+[node name="Barreras" type="Node2D" parent="."]
+
+[node name="Barrera" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 1869.1, 110.686 )
+rotation = -1.91029
+scale = Vector2( 3.64968, -3.22599 )
+memories_required = 1
+
+[node name="Barrera2" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 3818.04, -198.188 )
+rotation = 2.14572
+scale = Vector2( -1.88846, 2.54311 )
+memories_required = 2
+
+[node name="Barrera3" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 4221.54, -1226.88 )
+rotation = -1.74003
+scale = Vector2( 2.02459, 3.99571 )
 memories_required = 4
 
-[node name="CollisionShape2D" parent="Barrera" index="0"]
-position = Vector2( 2.24744, -2.24756 )
-shape = SubResource( 3 )
+[node name="Barrera4" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 2470.36, -2559.17 )
+rotation = -3.33294
+scale = Vector2( 2.38525, 3.67624 )
+memories_required = 4
 
-[node name="Sprite" parent="Barrera" index="1"]
-texture = SubResource( 5 )
+[node name="Barrera5" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 1813.63, -1789.43 )
+rotation = 4.45167
+scale = Vector2( 1.24183, 3.42963 )
+memories_required = 5
+
+[node name="Barrera6" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 5347.32, -2252.29 )
+rotation = -3.14299
+scale = Vector2( 2.83094, 2.96872 )
+memories_required = 10
 
 [node name="Sombras" type="Node2D" parent="."]
 
 [node name="Sombra" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 3241.54, -1801.12 )
+position = Vector2( 2647.57, -1430.6 )
 
 [node name="Sombra7" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 3510.64, -1565.92 )
+position = Vector2( 2370.78, -1172.77 )
+
+[node name="Sombra9" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2848.79, -677.794 )
 
 [node name="Sombra5" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 2652.48, -1642.2 )
+position = Vector2( 3136.14, -1469.67 )
+
+[node name="Sombra18" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2861.74, -1847.41 )
+
+[node name="Sombra17" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2936.58, -1020.65 )
+
+[node name="Sombra8" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3472.72, -1229.25 )
 
 [node name="Sombra6" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 2523.15, -1956.17 )
+position = Vector2( 2367.59, -2188.1 )
+
+[node name="Sombra20" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3479.9, -3127.89 )
+
+[node name="Sombra21" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3457.1, -2814.92 )
 
 [node name="Sombra2" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 2555.68, -637.853 )
+position = Vector2( 3540.03, -917.548 )
 
 [node name="Sombra3" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 2991.53, -526.301 )
+position = Vector2( 2570.83, -73.1633 )
 
 [node name="Sombra4" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 1662.07, -479.658 )
+position = Vector2( 3178.14, -70.4234 )
+
+[node name="Sombra10" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 7087.03, -616.31 )
+
+[node name="Sombra13" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 6792.87, -811.471 )
+
+[node name="Sombra12" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 7598.97, -220.33 )
+
+[node name="Sombra11" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 6736.3, -992.49 )
+
+[node name="Sombra14" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5644.53, -644.594 )
+
+[node name="Sombra16" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5725.16, 519.573 )
+
+[node name="Sombra15" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5002.47, -2058.81 )
 
 [node name="Recuerdos" type="Node2D" parent="."]
 
 [node name="Node2D" parent="Recuerdos" instance=ExtResource( 5 )]
-position = Vector2( 759.163, 343.159 )
+position = Vector2( 1120.68, 110.074 )
+min_speed = 0.1
+max_speed = 0.25
+movement_range = 250
 
 [node name="Node2D2" parent="Recuerdos" instance=ExtResource( 5 )]
-position = Vector2( 2625.94, -222.623 )
+position = Vector2( 7182.35, -937.306 )
+max_speed = 0.35
+movement_range = 300
+
+[node name="Node2D6" parent="Recuerdos" instance=ExtResource( 5 )]
+position = Vector2( 5154.37, -1372.88 )
+max_speed = 0.5
+movement_range = 600
 
 [node name="Node2D3" parent="Recuerdos" instance=ExtResource( 5 )]
-position = Vector2( 3514.38, -2890.71 )
+position = Vector2( 3425.46, -2966.64 )
+max_speed = 0.3
+movement_range = 150
 
 [node name="Node2D4" parent="Recuerdos" instance=ExtResource( 5 )]
-position = Vector2( 1234.9, -1621.47 )
+position = Vector2( 842.462, -1652.39 )
 
 [node name="Node2D5" parent="Recuerdos" instance=ExtResource( 5 )]
-position = Vector2( 3234.31, 711.265 )
+position = Vector2( 3109.58, 636.429 )
+max_speed = 0.3
+movement_range = 300
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -236,7 +306,9 @@ rotation = 1.8652
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint2"]
-position = Vector2( 6.59998, -7.59912 )
+position = Vector2( 637.645, -1331.7 )
+rotation = 1.75232
+scale = Vector2( 1, 0.263513 )
 shape = SubResource( 7 )
 
 [node name="Checkpoint3" type="Area2D" parent="Checkpoints"]
@@ -245,15 +317,17 @@ rotation = 1.57079
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint3"]
+position = Vector2( -436, 23.9971 )
 shape = SubResource( 8 )
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 411.654, 767.419 )
-MAX_SPEED = 220
+MAX_SPEED = 320
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -280,10 +354,7 @@ autoplay = true
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint3" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
-[connection signal="collected_new_memory" from="Jugador" to="Barrera" method="_on_Jugador_collected_new_memory"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
-
-[editable path="Barrera"]
 
 [editable path="Jugador"]

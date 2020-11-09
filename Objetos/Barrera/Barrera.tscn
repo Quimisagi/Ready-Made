@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Objetos/Barrera/Barrera.gd" type="Script" id=1]
 
-[sub_resource type="Animation" id=1]
-resource_name = "FadeOut"
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -31,13 +30,26 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 116.495, 10 )
+
 [node name="Barrera" type="StaticBody2D"]
+modulate = Color( 1, 1, 1, 0.9 )
 script = ExtResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 3.77551 )
-
-[node name="Sprite" type="Sprite" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeOut = SubResource( 1 )
+anims/FadeOut = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 226.0
+margin_bottom = 15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 113.737, 8.02293 )
+shape = SubResource( 3 )

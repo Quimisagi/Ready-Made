@@ -1,6 +1,6 @@
 extends Node
 
-export var MEMORIES_TO_RECOVER = 5
+export var MEMORIES_TO_RECOVER = 6
 var last_checkpoint: Vector2 = Vector2()
 signal memories_completed
 

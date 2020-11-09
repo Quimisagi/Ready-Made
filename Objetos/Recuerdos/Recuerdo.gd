@@ -2,13 +2,11 @@ extends Node2D
 
 var t = 0;
 var points_array = []
-var min_speed = 0.3
-var max_speed = 0.15
+export var min_speed = 0.2
+export var max_speed = 0.4
 var speed = 0
 var active = true
-var movement_range = 350
-var limitX = 600
-var limitY = 350
+export var movement_range = 450
 var min_points = 6
 var max_points = 15
 var initial_position = 0
@@ -27,6 +25,9 @@ func _on_PlayerDetector_body_entered(body):
 	if body.is_in_group('player'):
 		body.collected_memories += 1
 		body._check_if_memories_completed()
+		$esfera/AnimationPlayer.play("disappear")
+		$AudioStreamPlayer2D.play()
+		yield(get_tree().create_timer(0.5), "timeout")
 		queue_free()
 
 func _make_interpolations(points_array: Array, t: float):
