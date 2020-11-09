@@ -3,7 +3,6 @@
 [ext_resource path="res://Personajes/Jugador/Jugador.png" type="Texture" id=1]
 [ext_resource path="res://Personajes/Jugador/Jugador.gd" type="Script" id=2]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 17.4946
 height = 32.5892
