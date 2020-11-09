@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
-export var MAX_SPEED = 200
+export var MAX_SPEED = 260
 var ACCEL = 2000
 var motion = Vector2.ZERO
 var collected_memories = 0
+var is_walking = false
 
 signal died
 signal collected_new_memory
@@ -13,16 +14,22 @@ onready var cam = $Camera2D
 func play_animation(axis: Vector2) -> void:
 	if axis.length() == 0:
 		$AnimatedSprite.play('idle')
+		is_walking = false
+		$AudioStreamPlayer2D.stop()
 	elif axis.y < 0:
 		change_animation('up')
+		_step()
 	elif axis.y > 0:
 		change_animation('down')
+		_step()
 	elif axis.x > 0:
 		change_animation('right')
 		$AnimatedSprite.flip_h = false
+		_step()
 	else:
 		change_animation('left')
 		$AnimatedSprite.flip_h = true
+		_step()
 			
 func change_animation(animation_name: String) -> void:
 	if not $AnimatedSprite.animation == animation_name:
@@ -65,3 +72,8 @@ func _check_if_memories_completed():
 	
 func _die():
 	emit_signal("died")
+	
+func _step():
+	if !is_walking:
+		is_walking = true
+		$AudioStreamPlayer2D.play()
