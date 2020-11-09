@@ -7,7 +7,7 @@ var attack_range: float = 400
 export var speed: float = 200 #px/s
 var initial_position: Vector2
 var wasSpawned: bool = false
-var movement_range = 100
+export var movement_range = 100
 
 func _ready() -> void:
 	randomize()

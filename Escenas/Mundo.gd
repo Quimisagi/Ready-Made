@@ -13,6 +13,7 @@ func _ready() -> void:
 	$Jugador/Camera2D.limit_top = $LimitTopRight.position.y
 	
 func _are_memories_collected(var mem):
+	print(mem)
 	if mem == MEMORIES_TO_RECOVER:
 		emit_signal("memories_completed")
 		$Jugador.is_active = false

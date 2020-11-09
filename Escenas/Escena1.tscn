@@ -31,13 +31,13 @@ extents = Vector2( 123.58, 2318.51 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4026.13, 199.585 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 36.3345, 663.543 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 48.8948, 1223.25 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 35.4673, 364.046 )
 
 [node name="Mundo" type="Node2D"]
@@ -223,11 +223,9 @@ position = Vector2( 3472.72, -1229.25 )
 [node name="Sombra6" parent="Sombras" instance=ExtResource( 3 )]
 position = Vector2( 2367.59, -2188.1 )
 
-[node name="Sombra20" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 3479.9, -3127.89 )
-
 [node name="Sombra21" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 3457.1, -2814.92 )
+position = Vector2( 3560.55, -2967 )
+movement_range = 25
 
 [node name="Sombra2" parent="Sombras" instance=ExtResource( 3 )]
 position = Vector2( 3540.03, -917.548 )
@@ -278,7 +276,7 @@ max_speed = 0.5
 movement_range = 600
 
 [node name="Node2D3" parent="Recuerdos" instance=ExtResource( 5 )]
-position = Vector2( 3425.46, -2966.64 )
+position = Vector2( 3379.18, -3001.34 )
 max_speed = 0.3
 movement_range = 150
 
@@ -298,7 +296,7 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint"]
 position = Vector2( 3.36365, -205.179 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Checkpoint2" type="Area2D" parent="Checkpoints"]
 position = Vector2( 3152.88, -1094.6 )
@@ -309,7 +307,7 @@ script = ExtResource( 9 )
 position = Vector2( 637.645, -1331.7 )
 rotation = 1.75232
 scale = Vector2( 1, 0.263513 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Checkpoint3" type="Area2D" parent="Checkpoints"]
 position = Vector2( 4966.3, -2216.84 )
@@ -318,7 +316,7 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint3"]
 position = Vector2( -436, 23.9971 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 411.654, 767.419 )

@@ -10,6 +10,7 @@ export var movement_range = 450
 var min_points = 6
 var max_points = 15
 var initial_position = 0
+var obtained = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +23,8 @@ func _process(delta):
 	_follow_random_curve_path(delta)
 	
 func _on_PlayerDetector_body_entered(body):
-	if body.is_in_group('player'):
+	if body.is_in_group('player') && !obtained:
+		obtained = true
 		body.collected_memories += 1
 		body._check_if_memories_completed()
 		$esfera/AnimationPlayer.play("disappear")
