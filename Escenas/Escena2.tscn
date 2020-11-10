@@ -1,43 +1,14 @@
-<<<<<<< HEAD
-[gd_scene load_steps=27 format=2]
-=======
-[gd_scene load_steps=15 format=2]
->>>>>>> 2bcd6f8aad06e0c6a2caa34fa40647f0358eb56f
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_1_1.png" type="Texture" id=2]
+[ext_resource path="res://Objetos/Paredes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objetos/Auto.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objetos/Recuerdos/Recuerdo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Escenas/Mundo.gd" type="Script" id=6]
 [ext_resource path="res://Niveles/Checkpoint/Checkpoint.gd" type="Script" id=7]
 [ext_resource path="res://GUI/Fader.gd" type="Script" id=8]
 [ext_resource path="res://Audio/Segundo_Nivel_Mejorado.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_8_1.png" type="Texture" id=10]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_11_1.png" type="Texture" id=11]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_12_1.png" type="Texture" id=12]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_7_1.png" type="Texture" id=13]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_9_1.png" type="Texture" id=14]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_2_1.png" type="Texture" id=15]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_6_1.png" type="Texture" id=16]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_3_1.png" type="Texture" id=17]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_5_1.png" type="Texture" id=18]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_4_1.png" type="Texture" id=19]
-[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_10_1.png" type="Texture" id=20]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 416, 7020 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1184, 272 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 312, 200 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 192, 424 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 312, 1200 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 1447.32, 78.3307 )
@@ -71,127 +42,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Paredes" type="StaticBody2D" parent="."]
-
-[node name="image_10_1" type="Sprite" parent="Paredes"]
-position = Vector2( 926.869, 10092.6 )
-texture = ExtResource( 20 )
-
-[node name="image_11_1" type="Sprite" parent="Paredes"]
-position = Vector2( 926.869, 11170.6 )
-texture = ExtResource( 11 )
-
-[node name="image_12_1" type="Sprite" parent="Paredes"]
-position = Vector2( 928.309, 12282.5 )
-texture = ExtResource( 12 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( -448, 6696 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 2304, 6640 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 848, -416 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 808, 13088 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 16, -16 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1840, -16 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 144, 1360 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 1352 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 144, 6144 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 6144 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 144, 10912 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 10928 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 155.945, 12528 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 12528 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 32, 3752 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1824, 3752 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 24, 8528 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1824, 8520 )
-shape = SubResource( 5 )
-
-[node name="image_6_1" type="Sprite" parent="Paredes"]
-position = Vector2( 929.642, 5791.38 )
-texture = ExtResource( 16 )
-
-[node name="image_7_1" type="Sprite" parent="Paredes"]
-position = Vector2( 929.641, 6873.07 )
-texture = ExtResource( 13 )
-
-[node name="image_8_1" type="Sprite" parent="Paredes"]
-position = Vector2( 926.497, 7951.61 )
-texture = ExtResource( 10 )
-
-[node name="image_9_1" type="Sprite" parent="Paredes"]
-position = Vector2( 927.561, 9014.75 )
-texture = ExtResource( 14 )
-
-[node name="image_1_1" type="Sprite" parent="Paredes"]
-position = Vector2( 928, 394.221 )
-texture = ExtResource( 2 )
-
-[node name="image_2_1" type="Sprite" parent="Paredes"]
-position = Vector2( 931.931, 1471.51 )
-texture = ExtResource( 15 )
-
-[node name="image_3_1" type="Sprite" parent="Paredes"]
-position = Vector2( 929.962, 2583.92 )
-texture = ExtResource( 17 )
-
-[node name="image_4_1" type="Sprite" parent="Paredes"]
-position = Vector2( 929.962, 3661.88 )
-texture = ExtResource( 19 )
-
-[node name="image_5_1" type="Sprite" parent="Paredes"]
-position = Vector2( 929.962, 4739.84 )
-texture = ExtResource( 18 )
+[node name="Paredes" parent="." instance=ExtResource( 2 )]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = 359.152
@@ -222,149 +73,144 @@ position = Vector2( 759.812, 10735.8 )
 [node name="Recuerdo4" parent="Recuerdos" instance=ExtResource( 4 )]
 position = Vector2( 800.56, 12147.8 )
 
-[node name="Camera2D2" type="Camera2D" parent="Jugador"]
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 1920
-limit_bottom = 12960
+[node name="Autos" type="Node2D" parent="."]
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 416, 9832 )
 
-[node name="StaticBody2D5" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D5" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 408, 9360 )
 
-[node name="StaticBody2D6" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D6" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1248, 9056 )
 
-[node name="StaticBody2D7" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D7" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 984, 8816 )
 
-[node name="StaticBody2D8" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D8" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 813.501, 9293.15 )
 
-[node name="StaticBody2D10" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D10" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1048, 8392 )
 
-[node name="StaticBody2D11" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D11" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 408, 7976 )
 
-[node name="StaticBody2D12" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D12" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 808, 7984 )
 
-[node name="StaticBody2D14" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D14" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1272, 7152 )
 
-[node name="StaticBody2D15" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D15" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 400, 6904 )
 
-[node name="StaticBody2D16" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D16" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1264, 6752 )
 
-[node name="StaticBody2D17" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D17" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 880, 6352 )
 
-[node name="StaticBody2D20" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D20" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1184, 5952 )
 
-[node name="StaticBody2D21" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D21" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1216, 5552 )
 
-[node name="StaticBody2D27" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D27" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1088, 5152 )
 
-[node name="StaticBody2D28" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D28" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1000, 4752 )
 
-[node name="StaticBody2D29" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D29" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 432, 4464 )
 
-[node name="StaticBody2D30" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D30" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 440, 4064 )
 
-[node name="StaticBody2D31" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D31" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1120, 4040 )
 
-[node name="StaticBody2D32" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D32" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 824, 3836.09 )
 
-[node name="StaticBody2D23" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D23" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 400, 3656 )
 
-[node name="StaticBody2D24" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D24" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1130.13, 3613.7 )
 
-[node name="StaticBody2D25" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D25" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1232, 1944 )
 
-[node name="StaticBody2D42" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D42" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 920, 1960 )
 
-[node name="StaticBody2D44" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D44" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 976, 1552 )
 
-[node name="StaticBody2D45" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D45" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 152, 1960 )
 
-[node name="StaticBody2D46" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D46" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1560, 2096 )
 
-[node name="StaticBody2D43" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D43" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 504, 1600 )
 
-[node name="StaticBody2D26" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D26" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 800, 3440 )
 
-[node name="StaticBody2D33" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D33" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 400, 3240 )
 
-[node name="StaticBody2D34" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D34" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 448, 2840 )
 
-[node name="StaticBody2D35" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D35" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 888, 3032 )
 
-[node name="StaticBody2D36" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D36" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1208, 3184 )
 
-[node name="StaticBody2D37" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D37" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1216, 2760 )
 
-[node name="StaticBody2D38" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D38" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 784, 2512 )
 
-[node name="StaticBody2D41" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D41" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1200, 2352 )
 
-[node name="StaticBody2D39" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D39" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 456, 2416 )
 
-[node name="StaticBody2D40" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D40" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 480, 2016 )
 
-[node name="StaticBody2D22" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D22" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 472, 5232 )
 
-[node name="StaticBody2D18" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D18" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 400, 5896 )
 
-[node name="StaticBody2D19" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D19" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1176, 6352 )
 
-[node name="StaticBody2D13" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D13" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 408, 7560 )
 
-[node name="StaticBody2D9" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D9" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 408, 8392 )
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D2" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 712, 11152 )
 
-[node name="StaticBody2D4" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D4" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 944, 10088 )
 
-[node name="StaticBody2D3" parent="." instance=ExtResource( 3 )]
+[node name="StaticBody2D3" parent="Autos" instance=ExtResource( 3 )]
 position = Vector2( 1184, 10472 )
 
 [node name="Sombras" type="Node2D" parent="."]
@@ -416,7 +262,6 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
-<<<<<<< HEAD
 position = Vector2( 896.614, 12582.3 )
 path_mundo = NodePath("..")
 
@@ -427,11 +272,6 @@ limit_top = 0
 limit_right = 1885
 limit_bottom = 12820
 
-=======
-position = Vector2( 1083.37, 12503.6 )
-path_mundo = NodePath("..")
-
->>>>>>> 2bcd6f8aad06e0c6a2caa34fa40647f0358eb56f
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -458,11 +298,5 @@ __meta__ = {
 stream = ExtResource( 9 )
 autoplay = true
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
-<<<<<<< HEAD
-=======
-[connection signal="collected_new_memory" from="Jugador" to="." method="_on_Jugador_collected_new_memory"]
-[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
-[connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
->>>>>>> 2bcd6f8aad06e0c6a2caa34fa40647f0358eb56f
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D" to="." method="_on_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D2" to="." method="_on_arrived_at_checkpoint"]
