@@ -28,6 +28,7 @@
 [ext_resource path="res://Escenas/fog.png" type="Texture" id=26]
 [ext_resource path="res://Escenas/fog2.png" type="Texture" id=27]
 [ext_resource path="res://Escenas/RecuerdoEspecial.gd" type="Script" id=28]
+[ext_resource path="res://Niveles/Escenarios/Bosque/Bosque.tscn" type="PackedScene" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 123.58, 2318.51 )
@@ -98,34 +99,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
-
-[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -307,6 +280,8 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Escenario"]
 position = Vector2( 3847.97, -3424.19 )
 shape = SubResource( 2 )
+
+[node name="Bosque" parent="Escenario" instance=ExtResource( 29 )]
 
 [node name="Sombras" type="Node2D" parent="."]
 
@@ -521,30 +496,6 @@ rotation = 1.50921
 scale = Vector2( 0.339194, 0.416551 )
 texture = ExtResource( 27 )
 
-[node name="Barrera8" parent="Barreras" instance=ExtResource( 7 )]
-position = Vector2( 776.487, 815.205 )
-rotation = -0.65462
-scale = Vector2( 2.83094, 2.96872 )
-memories_required = 10
-
-[node name="AnimationPlayer" parent="Barreras/Barrera8" index="0"]
-anims/FadeOut = SubResource( 8 )
-
-[node name="ColorRect" parent="Barreras/Barrera8" index="1"]
-visible = false
-rect_scale = Vector2( 0.999994, 0.992979 )
-color = Color( 1, 1, 1, 0.247059 )
-
-[node name="CollisionShape2D" parent="Barreras/Barrera8" index="2"]
-position = Vector2( 50.4576, 9.65941 )
-scale = Vector2( 0.882567, 1.14203 )
-
-[node name="Sprite" type="Sprite" parent="Barreras/Barrera8"]
-position = Vector2( 101.012, 11.2643 )
-rotation = 1.50921
-scale = Vector2( 0.339194, 0.416551 )
-texture = ExtResource( 27 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
@@ -661,10 +612,9 @@ texture = ExtResource( 27 )
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
-[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
+[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="body_entered" from="Path2D/PathFollow2D/Node2D/Area2D9" to="Path2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Areas/Area2D4" to="Barreras/Barrera8" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Areas/Area2D4" to="Path2D" method="_on_Area2D_body_entered"]
 
 [editable path="Jugador"]
@@ -674,7 +624,5 @@ texture = ExtResource( 27 )
 [editable path="Barreras/Barrera11"]
 
 [editable path="Barreras/Barrera7"]
-
-[editable path="Barreras/Barrera8"]
 
 [editable path="Path2D/PathFollow2D/Node2D"]

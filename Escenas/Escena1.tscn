@@ -5,7 +5,6 @@
 [ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Escenas/Mundo.gd" type="Script" id=4]
 [ext_resource path="res://Objetos/Recuerdos/Recuerdo.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Niveles/Escenarios/bosque_level-1.png" type="Texture" id=6]
 [ext_resource path="res://Objetos/Barrera/Barrera.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Audio/fire.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Niveles/Checkpoint/Checkpoint.gd" type="Script" id=9]
@@ -25,6 +24,7 @@
 [ext_resource path="res://Niveles/Escenarios/frame4.png" type="Texture" id=23]
 [ext_resource path="res://Niveles/Escenarios/frame10.png" type="Texture" id=24]
 [ext_resource path="res://Niveles/Escenarios/frame12.png" type="Texture" id=25]
+[ext_resource path="res://Niveles/Escenarios/Bosque/Bosque.tscn" type="PackedScene" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 123.58, 2318.51 )
@@ -64,7 +64,6 @@ __meta__ = {
 [node name="Escenario" type="StaticBody2D" parent="."]
 
 [node name="Sprites" type="Node2D" parent="Escenario"]
-visible = false
 
 [node name="frame1" type="Sprite" parent="Escenario/Sprites"]
 position = Vector2( 960, -2708 )
@@ -130,6 +129,8 @@ texture = ExtResource( 22 )
 position = Vector2( 6720, -548 )
 texture = ExtResource( 25 )
 
+[node name="Bosque" parent="Escenario" instance=ExtResource( 26 )]
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Escenario"]
 visible = false
 polygon = PoolVector2Array( -3.50726, -0.380554, 0.38208, -1588, 291.689, -1332.57, 745.261, -1201.54, 881.333, -1282.18, 1148.44, -1272.1, 1259.31, -1337.61, 1455.86, -1382.97, 1586.89, -1438.41, 1758.24, -1634.95, 1808.63, -1816.38, 1944.71, -1796.22, 2151.33, -1695.43, 2312.6, -1584.56, 2398.28, -1483.76, 2332.76, -1332.57, 2252.13, -1272.1, 2242.05, -1151.14, 2206.77, -1065.47, 2095.9, -1035.23, 2035.42, -989.874, 1969.9, -924.359, 1803.59, -858.843, 1672.56, -798.366, 1642.32, -621.978, 1506.25, -591.739, 1435.7, -531.263, 1360.1, -475.827, 1264.35, -420.39, 1193.79, -319.596, 1143.4, -289.358, 961.968, -344.795, 775.499, -329.676, 649.507, -264.16, 543.674, -259.12, 452.959, -284.319, 275.57, -119.229, 161.277, -23.9849, 66.0333, 331.593, 47.6702, 712.573, 153.384, 840.94, 274.2, 976.858, 485.628, 1007.06, 757.464, 1014.61, 946.239, 991.96, 1112.36, 886.246, 1308.69, 757.879, 1489.91, 523.799, 1701.34, 402.983, 1701.34, 251.963, 1890.11, 17.8818, 2124.19, -80.281, 2380.93, 2.78003, 2637.66, 63.1877, 2750.93, 289.718, 2720.72, 493.594, 2607.46, 697.471, 2758.48, 780.532, 2969.91, 825.838, 3120.93, 984.409, 3271.94, 893.797, 3498.48, 954.205, 3589.09, 780.532, 3536.23, 599.309, 3302.15, 395.432, 3234.19, 32.9839, 3271.94, -57.6282, 3302.15, -397.423, 3513.58, -374.77, 3755.21, -291.709, 3951.53, -140.689, 4072.35, 85.8408, 4185.62, 214.208, 4208.27, 418.085, 4298.88, 606.86, 4480.1, 644.615, 4887.86, 659.717, 5189.9, 644.615, 5507.04, 554.002, 5605.2, 493.594, 5680.71, 667.267, 5884.59, 561.553, 6096.02, 720.125, 6503.77, 720.125, 6790.71, 772.981, 6987.03, 712.573, 7228.67, 803.185, 7500.5, 682.369, 7689.28, 478.493, 7696.83, 1059.92, -27.8397, 1090.12 )
@@ -170,10 +171,6 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 3847.97, -3424.19 )
 shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Escenario"]
-position = Vector2( 3847.97, -1088 )
-texture = ExtResource( 6 )
 
 [node name="Barreras" type="Node2D" parent="."]
 
