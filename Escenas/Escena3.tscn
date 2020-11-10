@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Escenas/Path.gd" type="Script" id=1]
 [ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Escenas/fog2.png" type="Texture" id=27]
 [ext_resource path="res://Escenas/RecuerdoEspecial.gd" type="Script" id=28]
 [ext_resource path="res://Niveles/Escenarios/Bosque/Bosque.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Escenas/perro.png" type="Texture" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 123.58, 2318.51 )
@@ -126,16 +127,43 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Curve2D" id=8]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 594.071, -1738.99, 0, 0, 0, 0, 674.162, -1709.62, 0, 0, 0, 0, 764.931, -1685.6, 0, 0, 0, 0, 924.11, -1761.57, 0, 0, 0, 0, 1054.18, -1795.42, 0, 0, 0, 0, 1376.42, -1782.42, 0, 0, 0, 0, 1519.23, -1720.59, 0, 0, 0, 0, 1627.24, -1859.13, 0, 0, 0, 0, 1801.16, -1907.02, 0, 0, 0, 0, 2037.13, -1948.55, 0, 0, 0, 0, 2084.32, -2033.5, 0, 0, 0, 0, 2407.94, -2186.45, 0, 0, 0, 0, 2601.57, -2158.09, 0, 0, 0, 0, 2641.21, -1871.15, 0, 0, 0, 0, 2616.67, -1710.69, 0, 0, 0, 0, 2837.53, -1546.46, 0, 0, 0, 0, 2911.16, -1302.94, 0, 0, 0, 0, 3224.52, -1193.45, 0, 0, 0, 0, 3216.97, -874.418, 0, 0, 0, 0, 2837.53, -832.888, 0, 0, 0, 0, 2612.89, -1042.43, 0, 0, 0, 0, 2244.78, -940.49, 0, 0, 0, 0, 1689.78, -400.594, 0, 0, 0, 0, 1168.76, -121.207, 0, 0, 0, 0, 995.092, -187.278, 0, 0, 0, 0, 509.94, -96.6659, 0, 0, 0, 0, 266.421, 135.527, 0, 0, 0, 0, 251.319, 575.373, 0, 0, 0, 0, 270.196, 790.576, 0, 0, 0, 0, 424.992, 866.086, 0, 0, 0, 0, 776.113, 869.861, 0, 0, 0, 0, 1227.28, 660.321, 0, 0, 0, 0, 1063.05, 480.985, 0, 0, 0, 0, 1440.6, 305.425, 0, 0, 0, 0, 1563.3, 133.639, 0, 0, 0, 0, 1769.07, -43.8089, 0, 0, 0, 0, 2165.5, -211.819, 0, 0, 0, 0, 2354.27, -243.91, 0, 0, 0, 0, 2537.38, -102.329, 0, 0, 0, 0, 2720.49, 29.8133, 0, 0, 0, 0, 2871.51, 228.027, 0, 0, 0, 0, 3060.29, 224.251, 0, 0, 0, 0, 3084.83, 86.4457, 0, 0, 0, 0, 2975.34, -134.421, 0, 0, 0, 0, 2845.09, -353.4, 0, 0, 0, 0, 2650.65, -540.287, 0, 0, 0, 0, 2595.9, -823.449, 0, 0, 0, 0, 3067.84, -1016, 0, 0, 0, 0, 3318.91, -661.103, 0, 0, 0, 0, 3754.98, -445.899, 0, 0, 0, 0, 4057.02, -243.91, 0, 0, 0, 0, 4436.46, 12.824, 0, 0, 0, 0, 4687.53, 318.639, 0, 0, 0, 0, 4881.97, 397.925, 0, 0, 0, 0, 5384.11, 360.17, 0, 0, 0, 0, 5671.05, 141.191, 0, 0, 0, 0, 5899.46, 124.201, 0, 0, 0, 0, 6195.84, 328.078, 0, 0, 0, 0, 6586.6, 556.495, 0, 0, 0, 0, 7022.67, 592.363, 0, 0, 0, 0, 7526.7, 295.986, 0, 0, 0, 0, 7553.13, -198.604, 0, 0, 0, 0, 7443.64, -585.593, 0, 0, 0, 0, 7166.14, -851.765, 0, 0, 0, 0, 7211.45, -1123.6, 0, 0, 0, 0, 6898.08, -963.142, 0, 0, 0, 0, 6592.27, -997.122, 0, 0, 0, 0, 6082.57, -1110.39, 0, 0, 0, 0, 5671.04, -1129.26, 0, 0, 0, 0, 5338.8, -1070.74, 0, 0, 0, 0, 5102.83, -1367.12, 0, 0, 0, 0, 5110.38, -1563.45, 0, 0, 0, 0, 4725.28, -1695.59, 0, 0, 0, 0, 4898.96, -1950.43, 0, 0, 0, 0, 5093.39, -2031.61, 0, 0, 0, 0, 5010.33, -2395.94, 0, 0, 0, 0, 4887.63, -2562.07, 0, 0, 0, 0, 5208.55, -2613.03, 0, 0, 0, 0, 5559.67, -2713.09, 0, 0, 0, 0, 5878.7, -2790.48, 0, 0, 0, 0, 6095.79, -2667.78, 0, 0, 0, 0, 6539.41, -2662.12, 0, 0, 0, 0, 6896.19, -2865.99, 0, 0, 0, 0, 7003.79, -2686.66, 0, 0, 0, 0, 7260.53, -2737.63 )
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
 }
 
-[sub_resource type="CircleShape2D" id=9]
-radius = 284.547
+[sub_resource type="Curve2D" id=9]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 594.071, -1738.99, 0, 0, 0, 0, 674.162, -1709.62, 0, 0, 0, 0, 764.931, -1685.6, 0, 0, 0, 0, 924.11, -1761.57, 0, 0, 0, 0, 1054.18, -1795.42, 0, 0, 0, 0, 1376.42, -1782.42, 0, 0, 0, 0, 1519.23, -1720.59, 0, 0, 0, 0, 1627.24, -1859.13, 0, 0, 0, 0, 1801.16, -1907.02, 0, 0, 0, 0, 2037.13, -1948.55, 0, 0, 0, 0, 2084.32, -2033.5, 0, 0, 0, 0, 2407.94, -2186.45, 0, 0, 0, 0, 2539.91, -2065.09, 0, 0, 0, 0, 2641.21, -1871.15, 0, 0, 0, 0, 2616.67, -1710.69, 0, 0, 0, 0, 2837.53, -1546.46, 0, 0, 0, 0, 2911.16, -1302.94, 0, 0, 0, 0, 3224.52, -1193.45, 0, 0, 0, 0, 3216.97, -874.418, 0, 0, 0, 0, 2837.53, -832.888, 0, 0, 0, 0, 2525.23, -938.482, 0, 0, 0, 0, 2244.78, -940.49, 0, 0, 0, 0, 1689.78, -400.594, 0, 0, 0, 0, 1168.76, -121.207, 0, 0, 0, 0, 995.092, -187.278, 0, 0, 0, 0, 509.94, -96.6659, 0, 0, 0, 0, 266.421, 135.527, 0, 0, 0, 0, 251.319, 575.373, 0, 0, 0, 0, 270.196, 790.576, 0, 0, 0, 0, 424.992, 866.086, 0, 0, 0, 0, 776.113, 869.861, 0, 0, 0, 0, 1227.28, 660.321, 0, 0, 0, 0, 1063.05, 480.985, 0, 0, 0, 0, 1440.6, 305.425, 0, 0, 0, 0, 1563.3, 133.639, 0, 0, 0, 0, 1769.07, -43.8089, 0, 0, 0, 0, 2165.5, -211.819, 0, 0, 0, 0, 2354.27, -243.91, 0, 0, 0, 0, 2537.38, -102.329, 0, 0, 0, 0, 2720.49, 29.8133, 0, 0, 0, 0, 2871.51, 228.027, 0, 0, 0, 0, 3060.29, 224.251, 0, 0, 0, 0, 3084.83, 86.4457, 0, 0, 0, 0, 2975.34, -134.421, 0, 0, 0, 0, 2845.09, -353.4, 0, 0, 0, 0, 2650.65, -540.287, 0, 0, 0, 0, 2595.9, -823.449, 0, 0, 0, 0, 3067.84, -1016, 0, 0, 0, 0, 3318.91, -661.103, 0, 0, 0, 0, 3754.98, -445.899, 0, 0, 0, 0, 4057.02, -243.91, 0, 0, 0, 0, 4436.46, 12.824, 0, 0, 0, 0, 4687.53, 318.639, 0, 0, 0, 0, 4881.97, 397.925, 0, 0, 0, 0, 5384.11, 360.17, 0, 0, 0, 0, 5671.05, 141.191, 0, 0, 0, 0, 5899.46, 124.201, 0, 0, 0, 0, 6195.84, 328.078, 0, 0, 0, 0, 6586.6, 556.495, 0, 0, 0, 0, 7022.67, 592.363, 0, 0, 0, 0, 7526.7, 295.986, 0, 0, 0, 0, 7553.13, -198.604, 0, 0, 0, 0, 7443.64, -585.593, 0, 0, 0, 0, 7166.14, -851.765, 0, 0, 0, 0, 7211.45, -1123.6, 0, 0, 0, 0, 6898.08, -963.142, 0, 0, 0, 0, 6592.27, -997.122, 0, 0, 0, 0, 6082.57, -1110.39, 0, 0, 0, 0, 5671.04, -1129.26, 0, 0, 0, 0, 5338.8, -1070.74, 0, 0, 0, 0, 5102.83, -1367.12, 0, 0, 0, 0, 5110.38, -1563.45, 0, 0, 0, 0, 4725.28, -1695.59, 0, 0, 0, 0, 4898.96, -1950.43, 0, 0, 0, 0, 5093.39, -2031.61, 0, 0, 0, 0, 5010.33, -2395.94, 0, 0, 0, 0, 4887.63, -2562.07, 0, 0, 0, 0, 5208.55, -2613.03, 0, 0, 0, 0, 5559.67, -2713.09, 0, 0, 0, 0, 5878.7, -2790.48, 0, 0, 0, 0, 6095.79, -2667.78, 0, 0, 0, 0, 6539.41, -2662.12, 0, 0, 0, 0, 6896.19, -2865.99, 0, 0, 0, 0, 7003.79, -2686.66, 0, 0, 0, 0, 7260.53, -2737.63 )
+}
 
-[sub_resource type="Animation" id=10]
-resource_name = "moving"
+[sub_resource type="CircleShape2D" id=10]
+radius = 216.624
+
+[sub_resource type="Animation" id=11]
 length = 8.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:position:x")
@@ -158,7 +186,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 )
 }
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 210.393, 52.6995 )
 
 [node name="Mundo" type="Node2D"]
@@ -304,7 +332,19 @@ position = Vector2( 2861.74, -1847.41 )
 position = Vector2( 2936.58, -1020.65 )
 
 [node name="Sombra19" parent="Sombras" instance=ExtResource( 3 )]
-position = Vector2( 2279.71, -834.184 )
+position = Vector2( 2287.26, -958.775 )
+
+[node name="Sombra44" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2513.99, -482.017 )
+
+[node name="Sombra45" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3026.77, 327.413 )
+
+[node name="Sombra42" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2674.25, -1183.42 )
+
+[node name="Sombra43" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2713.89, -230.104 )
 
 [node name="Sombra20" parent="Sombras" instance=ExtResource( 3 )]
 position = Vector2( 809.178, -113.75 )
@@ -496,6 +536,31 @@ rotation = 1.50921
 scale = Vector2( 0.339194, 0.416551 )
 texture = ExtResource( 27 )
 
+[node name="Barrera8" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 952.568, 557.609 )
+rotation = -1.69562
+scale = Vector2( 2.83094, 2.96872 )
+memories_required = 10
+
+[node name="AnimationPlayer" parent="Barreras/Barrera8" index="0"]
+anims/FadeOut = SubResource( 8 )
+
+[node name="ColorRect" parent="Barreras/Barrera8" index="1"]
+visible = false
+rect_scale = Vector2( 0.999994, 0.992979 )
+color = Color( 1, 1, 1, 0.247059 )
+
+[node name="CollisionShape2D" parent="Barreras/Barrera8" index="2"]
+position = Vector2( 102.869, 9.84766 )
+rotation = -0.0423296
+scale = Vector2( 0.350583, 1.14203 )
+
+[node name="Sprite2" type="Sprite" parent="Barreras/Barrera8"]
+position = Vector2( 101.012, 11.2643 )
+rotation = 1.50921
+scale = Vector2( 0.339194, 0.416551 )
+texture = ExtResource( 27 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
@@ -529,7 +594,7 @@ stream = ExtResource( 8 )
 autoplay = true
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 8 )
+curve = SubResource( 9 )
 script = ExtResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -540,10 +605,13 @@ loop = false
 [node name="Node2D" parent="Path2D/PathFollow2D" groups=[
 "memory",
 ] instance=ExtResource( 5 )]
-position = Vector2( -16, -25 )
+position = Vector2( -16.9358, -25.9386 )
 script = ExtResource( 28 )
 
 [node name="Sprite" parent="Path2D/PathFollow2D/Node2D" index="1"]
+position = Vector2( -2, 1.271 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 30 )
 script = ExtResource( 28 )
 
 [node name="Area2D9" type="Area2D" parent="Path2D/PathFollow2D/Node2D"]
@@ -556,10 +624,10 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Node2D/Area2D9"]
 position = Vector2( -1139.89, 215.668 )
 rotation = 1.2045
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Node2D"]
-anims/moving = SubResource( 10 )
+anims/moving = SubResource( 11 )
 
 [node name="Areas" type="Node2D" parent="."]
 
@@ -572,7 +640,7 @@ scale = Vector2( 2.7344, 2.7344 )
 position = Vector2( 686.385, -62.8479 )
 rotation = 2.38511
 scale = Vector2( 0.25701, 1.2516 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="Area2D4" type="Area2D" parent="Areas"]
 position = Vector2( 206.174, 369.784 )
@@ -582,14 +650,22 @@ scale = Vector2( 2.7344, 2.7344 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D4"]
 position = Vector2( 53.8174, 33.6359 )
 rotation = 1.2045
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="Areas"]
+visible = false
 modulate = Color( 1, 1, 1, 0.564706 )
 position = Vector2( 2201.65, -1053.65 )
 texture = ExtResource( 27 )
 
+[node name="Sprite6" type="Sprite" parent="Areas"]
+visible = false
+modulate = Color( 1, 1, 1, 0.752941 )
+position = Vector2( 1522.83, 162.574 )
+texture = ExtResource( 27 )
+
 [node name="Sprite2" type="Sprite" parent="Areas"]
+visible = false
 modulate = Color( 1, 1, 1, 0.564706 )
 position = Vector2( 3197.28, -1803.73 )
 texture = ExtResource( 27 )
@@ -610,10 +686,12 @@ modulate = Color( 1, 1, 1, 0.564706 )
 position = Vector2( 5689.69, -676.925 )
 texture = ExtResource( 27 )
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
+[connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_arrived_at_checkpointt"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
+[connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
-[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
+[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="body_entered" from="Path2D/PathFollow2D/Node2D/Area2D9" to="Path2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Areas/Area2D4" to="Path2D" method="_on_Area2D_body_entered"]
 
@@ -624,5 +702,7 @@ texture = ExtResource( 27 )
 [editable path="Barreras/Barrera11"]
 
 [editable path="Barreras/Barrera7"]
+
+[editable path="Barreras/Barrera8"]
 
 [editable path="Path2D/PathFollow2D/Node2D"]

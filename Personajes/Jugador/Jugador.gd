@@ -81,6 +81,7 @@ func _check_if_memories_completed():
 	
 func _die():
 	emit_signal("died", 2)
+	$MuerteAudio.play()
 	is_active = false
 	
 func _step():
