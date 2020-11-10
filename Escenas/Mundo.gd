@@ -1,6 +1,7 @@
 extends Node
 
-export var MEMORIES_TO_RECOVER = 6
+export var MEMORIES_TO_RECOVER = 4
+export var fade_animator: NodePath
 var last_checkpoint: Vector2 = Vector2()
 signal memories_completed
 
@@ -24,11 +25,16 @@ func _are_memories_collected(var mem):
 	if mem == MEMORIES_TO_RECOVER:
 		emit_signal("memories_completed")
 		$Jugador.is_active = false
+		if fade_animator:
+			get_node(fade_animator).get_node('AnimationPlayer').play("Salir")
+			
+		yield(get_tree().create_timer(1), "timeout")
+		AdministradorDeEscenas.go_to_next_scene()
 
 func _on_Jugador_died(wait_time) -> void:
 	yield(get_tree().create_timer(wait_time - 1), "timeout")
 	$Jugador.position = last_checkpoint
 	$Jugador.is_active = true
 
-func _on_Checkpoint_arrived_at_checkpoint(checkpoint_position:Vector2) -> void:
+func _on_arrived_at_checkpoint(checkpoint_position:Vector2) -> void:
 	last_checkpoint = checkpoint_position
