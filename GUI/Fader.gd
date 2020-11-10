@@ -1,10 +1,7 @@
 extends ColorRect
 var fadeIn = false
+export var fadeOut = false
 var speed = 5
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func _process(delta):
 	if fadeIn:
@@ -14,7 +11,12 @@ func _process(delta):
 		
 		if modulate.a >= 1 || modulate.a <= 0:
 			fadeIn = false
-
+			
+	if fadeOut:
+		modulate.a -= delta
+		if modulate.a <= 0:
+			fadeOut = false
+			visible = false
 
 func _on_Mundo_memories_completed():
 	fadeIn = true

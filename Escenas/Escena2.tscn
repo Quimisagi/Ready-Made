@@ -7,8 +7,12 @@
 [ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Escenas/Mundo.gd" type="Script" id=6]
 [ext_resource path="res://Niveles/Checkpoint/Checkpoint.gd" type="Script" id=7]
+<<<<<<< HEAD
 [ext_resource path="res://GUI/AnimacionDeEscena.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Audio/Segundo_Nivel_Mejorado.ogg" type="AudioStream" id=9]
+=======
+[ext_resource path="res://GUI/Fader.gd" type="Script" id=8]
+>>>>>>> b95e0405e116bcefc6883d6700c93be2646cf0b1
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 416, 7020 )
@@ -31,8 +35,11 @@ extents = Vector2( 1447.32, 78.3307 )
 [node name="Mundo" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 6 )
+<<<<<<< HEAD
 MEMORIES_TO_RECOVER = 5
 fade_animator = NodePath("CanvasLayer/AnimacionDeEscena")
+=======
+>>>>>>> b95e0405e116bcefc6883d6700c93be2646cf0b1
 
 [node name="LimitBottomLeft" type="Position2D" parent="."]
 
@@ -335,6 +342,7 @@ __meta__ = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+<<<<<<< HEAD
 [node name="AnimacionDeEscena" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="AnimacionDeEscena2" parent="CanvasLayer" instance=ExtResource( 8 )]
@@ -359,6 +367,24 @@ position = Vector2( 184, 5408 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+=======
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+>>>>>>> b95e0405e116bcefc6883d6700c93be2646cf0b1
 [connection signal="collected_new_memory" from="Jugador" to="." method="_on_Jugador_collected_new_memory"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D" to="." method="_on_arrived_at_checkpoint"]
