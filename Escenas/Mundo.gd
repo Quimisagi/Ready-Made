@@ -23,6 +23,7 @@ func _are_memories_collected(var mem):
 	print(mem)
 	if mem == MEMORIES_TO_RECOVER:
 		emit_signal("memories_completed")
+		$Jugador/VictoryAudio.play()
 		$Jugador.is_active = false
 		yield(get_tree().create_timer(1), "timeout")
 		AdministradorDeEscenas.go_to_next_scene()
