@@ -2,6 +2,7 @@ extends Node
 
 var scenes = [
 	'res://Escenas/Escena1.tscn',
+	'res://Escenas/Escena2.tscn',
 	'res://Escenas/Escena3.tscn',
 ]
 

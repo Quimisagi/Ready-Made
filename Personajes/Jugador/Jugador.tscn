@@ -21,12 +21,12 @@
 animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ) ],
@@ -89,6 +89,7 @@ editor_draw_drag_margin = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
+volume_db = 2.019
 
 [node name="MuerteAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )

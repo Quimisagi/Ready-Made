@@ -10,7 +10,7 @@
 [ext_resource path="res://GUI/Fader.gd" type="Script" id=8]
 [ext_resource path="res://Audio/Segundo_Nivel_Mejorado.ogg" type="AudioStream" id=9]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1447.32, 78.3307 )
 
 [node name="Mundo" type="Node2D"]
@@ -59,7 +59,9 @@ __meta__ = {
 position = Vector2( 747.031, 9013.6 )
 
 [node name="Recuerdo5" parent="Recuerdos" instance=ExtResource( 4 )]
-position = Vector2( 898.993, 7163.48 )
+position = Vector2( 1423.28, 8526.18 )
+max_speed = 0.3
+movement_range = 200
 
 [node name="Recuerdo6" parent="Recuerdos" instance=ExtResource( 4 )]
 position = Vector2( 162.828, 5315.98 )
@@ -221,20 +223,46 @@ position = Vector2( 936, 11760 )
 [node name="Sombra2" parent="Sombras" instance=ExtResource( 5 )]
 position = Vector2( 1424, 10240 )
 
+[node name="Sombra8" parent="Sombras" instance=ExtResource( 5 )]
+position = Vector2( 345.219, 10371.9 )
+
+[node name="Sombra9" parent="Sombras" instance=ExtResource( 5 )]
+position = Vector2( 824.677, 11025.1 )
+
 [node name="Sombra3" parent="Sombras" instance=ExtResource( 5 )]
 position = Vector2( 432, 9040 )
 
+[node name="Sombra10" parent="Sombras" instance=ExtResource( 5 )]
+position = Vector2( 1402.9, 8974.07 )
+
+[node name="Sombra11" parent="Sombras" instance=ExtResource( 5 )]
+position = Vector2( 1455.23, 7599.35 )
+speed = 140.0
+movement_range = 50
+
+[node name="Sombra12" parent="Sombras" instance=ExtResource( 5 )]
+position = Vector2( 1117.75, 8029.88 )
+speed = 140.0
+movement_range = 50
+
 [node name="Sombra4" parent="Sombras" instance=ExtResource( 5 )]
-position = Vector2( 944, 7496 )
+position = Vector2( 963.027, 7353.29 )
 
 [node name="Sombra7" parent="Sombras" instance=ExtResource( 5 )]
-position = Vector2( 1288, 4592 )
+position = Vector2( 1288, 4655.57 )
+attack_range = 290.0
+speed = 250.0
+
+[node name="Sombra13" parent="Sombras" instance=ExtResource( 5 )]
+position = Vector2( 1271.05, 4494.53 )
+attack_range = 290.0
+speed = 250.0
 
 [node name="Sombra5" parent="Sombras" instance=ExtResource( 5 )]
-position = Vector2( 248, 6832 )
+position = Vector2( 387.691, 6730.41 )
 
 [node name="Sombra6" parent="Sombras" instance=ExtResource( 5 )]
-position = Vector2( 368, 5392 )
+position = Vector2( 84.064, 5061.45 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -243,7 +271,7 @@ position = Vector2( 751.508, 9730.69 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Area2D"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -256,16 +284,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Area2D2"]
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
 position = Vector2( 896.614, 12582.3 )
+MAX_SPEED = 320
 path_mundo = NodePath("..")
 
 [node name="Camera2D2" type="Camera2D" parent="Jugador"]
+position = Vector2( -5.65698, 5.65625 )
 current = true
 limit_left = 0
 limit_top = 0
@@ -296,7 +326,11 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -9.088
 autoplay = true
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D" to="." method="_on_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D2" to="." method="_on_arrived_at_checkpoint"]
+[connection signal="collected_new_memory" from="Jugador" to="." method="_on_Jugador_collected_new_memory"]
+[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
+[connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]

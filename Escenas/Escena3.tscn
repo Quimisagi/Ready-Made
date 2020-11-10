@@ -687,8 +687,8 @@ texture = ExtResource( 27 )
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
-[connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
+[connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
 [connection signal="body_entered" from="Path2D/PathFollow2D/Node2D/Area2D9" to="Path2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Areas/Area2D4" to="Path2D" method="_on_Area2D_body_entered"]
 
