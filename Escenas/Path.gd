@@ -10,7 +10,7 @@ func _ready():
 
 func _process(delta):
 	if running:
-		follow.set_offset(follow.get_offset() + 350 * delta)
+		follow.set_offset(follow.get_offset() + 400 * delta)
 
 
 func _on_Area2D_body_entered(body):

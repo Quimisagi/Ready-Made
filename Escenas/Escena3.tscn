@@ -602,6 +602,9 @@ loop = false
 position = Vector2( -16, -25 )
 script = null
 
+[node name="Sprite" parent="Path2D/PathFollow2D/Node2D" index="1"]
+script = ExtResource( 28 )
+
 [node name="Area2D9" type="Area2D" parent="Path2D/PathFollow2D/Node2D"]
 position = Vector2( 1263.84, -232.46 )
 scale = Vector2( 1.10467, 1.10467 )
@@ -614,44 +617,10 @@ position = Vector2( -1139.89, 215.668 )
 rotation = 1.2045
 shape = SubResource( 13 )
 
-[node name="Sprite" parent="Path2D/PathFollow2D/Node2D" index="2"]
-script = ExtResource( 28 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Node2D"]
 anims/moving = SubResource( 12 )
 
 [node name="Areas" type="Node2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="Areas"]
-position = Vector2( 1722.16, -1974.42 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D"]
-position = Vector2( 53.8174, 33.6359 )
-rotation = 1.2045
-shape = SubResource( 11 )
-
-[node name="Area2D8" type="Area2D" parent="Areas"]
-position = Vector2( 1722.16, -1974.42 )
-
-[node name="Area2D2" type="Area2D" parent="Areas"]
-position = Vector2( 2664.13, -1677.1 )
-rotation = -1.76322
-scale = Vector2( 2.7344, 2.7344 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D2"]
-position = Vector2( 53.8174, 33.6359 )
-rotation = 1.2045
-shape = SubResource( 11 )
-
-[node name="Area2D3" type="Area2D" parent="Areas"]
-position = Vector2( 1490.24, -354.889 )
-rotation = -0.0628916
-scale = Vector2( 2.7344, 2.7344 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D3"]
-position = Vector2( 53.8174, 33.6359 )
-rotation = 1.2045
-shape = SubResource( 11 )
 
 [node name="Area2D7" type="Area2D" parent="Areas"]
 position = Vector2( 1490.24, -354.889 )
@@ -674,35 +643,37 @@ position = Vector2( 53.8174, 33.6359 )
 rotation = 1.2045
 shape = SubResource( 11 )
 
-[node name="Area2D5" type="Area2D" parent="Areas"]
-position = Vector2( 4961.04, 242.648 )
-rotation = 0.291847
-scale = Vector2( 2.7344, 2.7344 )
+[node name="Sprite" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 2201.65, -1053.65 )
+texture = ExtResource( 27 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D5"]
-position = Vector2( 53.8174, 33.6359 )
-rotation = 1.2045
-shape = SubResource( 11 )
+[node name="Sprite2" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 3197.28, -1803.73 )
+texture = ExtResource( 27 )
 
-[node name="Area2D6" type="Area2D" parent="Areas"]
-position = Vector2( 5588.25, -1359.26 )
-rotation = 1.25382
-scale = Vector2( 2.7344, 5.53426 )
+[node name="Sprite5" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( 3300.62, -830.864 )
+scale = Vector2( 1.11507, 0.993401 )
+texture = ExtResource( 27 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D6"]
-position = Vector2( 53.8174, 33.6359 )
-rotation = 1.2045
-shape = SubResource( 11 )
+[node name="Sprite3" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 2938.28, 49.61 )
+texture = ExtResource( 27 )
+
+[node name="Sprite4" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 5689.69, -676.925 )
+texture = ExtResource( 27 )
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
 [connection signal="body_entered" from="Path2D/PathFollow2D/Node2D/Area2D9" to="Path2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Areas/Area2D" to="Path2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Areas/Area2D8" to="Path2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Areas/Area2D2" to="Path2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Areas/Area2D3" to="Path2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Areas/Area2D7" to="Barreras/Barrera10" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Areas/Area2D4" to="Path2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Areas/Area2D4" to="Barreras/Barrera8" method="_on_Area2D_body_entered"]
