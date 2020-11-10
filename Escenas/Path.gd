@@ -2,7 +2,8 @@ extends Path2D
 
 
 onready var follow = $PathFollow2D
-var running = false
+export var running = false
+export var speed = 400
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,7 +11,7 @@ func _ready():
 
 func _process(delta):
 	if running:
-		follow.set_offset(follow.get_offset() + 400 * delta)
+		follow.set_offset(follow.get_offset() + speed * delta)
 
 
 func _on_Area2D_body_entered(body):

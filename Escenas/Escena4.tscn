@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Escenas/Path.gd" type="Script" id=1]
+[ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/Mundo.gd" type="Script" id=4]
+[ext_resource path="res://Escenas/17-171611_oval-clipart-sports-track-bird-eye-view.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Fader.gd" type="Script" id=6]
+[ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 634.627
+height = 1324.78
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3420.87, -978.375, 0, 0, 0, 0, 2635.57, -691.438, 0, 0, 0, 0, 2284.44, -793.376, 0, 0, 0, 0, 2054.14, -793.376, 0, 0, 0, 0, 1854.04, -691.438, 0, 0, 0, 0, 1718.12, -831.131, 0, 0, 0, 0, 1789.85, -899.09, 0, 0, 0, 0, 1585.98, -944.396, 0, 0, 0, 0, 1461.39, -808.478, 0, 0, 0, 0, 1193.33, -766.947, 0, 0, 0, 0, 932.816, -819.804, 0, 0, 0, 0, 940.367, -1068.99, 0, 0, 0, 0, 581.695, -936.845, 0, 0, 0, 0, 638.327, -1374.8, 0, 0, 0, 0, 434.45, -1718.37, 0, 0, 0, 0, 423.124, -1914.7, 0, 0, 0, 0, 642.103, -2009.09, 0, 0, 0, 0, 577.919, -2265.82, 0, 0, 0, 0, 842.204, -2526.33, 0, 0, 0, 0, 1529.34, -2737.76, 0, 0, 0, 0, 1585.98, -2560.31, 0, 0, 0, 0, 1922, -2639.59, 0, 0, 0, 0, 2424.14, -2832.14, 0, 0, 0, 0, 2862.1, -2635.82, 0, 0, 0, 0, 2994.24, -2537.66, 0, 0, 0, 0, 3111.28, -2666.02, 0, 0, 0, 0, 3386.89, -2628.27, 0, 0, 0, 0, 3624.75, -2235.62, 0, 0, 0, 0, 3873.93, -2073.27, 0, 0, 0, 0, 3775.77, -1846.74, 0, 0, 0, 0, 3677.6, -1778.78, 0, 0, 0, 0, 3911.68, -1673.07, 0, 0, 0, 0, 3809.75, -1423.88, 0, 0, 0, 0, 3624.75, -1250.21, 0, 0, 0, 0, 3216.99, -1095.42, 0, 0, 0, 0, 2877.2, -891.539, 0, 0, 0, 0, 2424.14, -672.56, 0, 0, 0, 0, 2167.4, -940.62, 0, 0, 0, 0, 1710.57, -683.886, 0, 0, 0, 0, 1434.96, -683.886, 0, 0, 0, 0, 1212.2, -834.906 )
+}
+
+[node name="Mundo" type="Node2D"]
+position = Vector2( 0, 8 )
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LimitBottomLeft" type="Position2D" parent="."]
+position = Vector2( 4.23779, 1080 )
+__meta__ = {
+"_editor_description_": "Place at the bottom left limit of the level. This node is used to calculate the camera limits"
+}
+
+[node name="LimitTopRight" type="Position2D" parent="."]
+position = Vector2( 7680, -3248 )
+__meta__ = {
+"_editor_description_": "Place at the top right limit of the level. This node is used to calculate the camera limits"
+}
+
+[node name="Escenario" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Escenario"]
+position = Vector2( 2152.83, -1663.55 )
+scale = Vector2( 5.22044, 5.22044 )
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Escenario"]
+position = Vector2( 4213.18, -3482.42 )
+rotation = 3.05348
+polygon = PoolVector2Array( 2205.66, -3048.12, -61.5112, -3248.41, -46.3789, -2283.34, 134.331, -2283.43, 266.171, -2275.8, 192.944, -2446.91, 242.449, -2916.38, 2173.87, -2733.7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Escenario"]
+rotation = -1.65902
+polygon = PoolVector2Array( 352.014, 2332.95, 449.474, 1150.26, 550.831, 772.859, 838.849, 469.204, 1206.82, 272.793, 1716.12, 217.674, 2122.24, 317.992, 2457.65, 530.114, 2469.9, -8.53313, 1041.98, -109.544, 202.894, 453.713, 81.5913, 2168.23 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Escenario"]
+position = Vector2( -472, -2996 )
+rotation = -0.115337
+polygon = PoolVector2Array( 352.014, 2332.95, 449.474, 1150.26, 550.831, 772.859, 838.849, 469.204, 1185.09, 270.153, 1732.09, 240.908, 2122.24, 317.992, 2613.73, 347.074, 2469.9, -8.53313, 1041.98, -109.544, 202.894, 453.713, 81.5913, 2168.23 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Escenario"]
+position = Vector2( 4213.18, -3482.42 )
+rotation = 1.48571
+polygon = PoolVector2Array( 352.014, 2332.95, 449.474, 1150.26, 550.831, 772.859, 838.849, 469.204, 1206.82, 272.793, 1716.12, 217.674, 2122.24, 317.992, 2302.66, 398.051, 2332.64, 46.5488, 1041.98, -109.544, 202.894, 453.713, 81.5913, 2168.23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario"]
+position = Vector2( 2091.7, -1745.08 )
+rotation = 1.57079
+shape = SubResource( 1 )
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3759.33, -910.988 )
+MAX_SPEED = 320
+
+[node name="AudioStreamPlayer2D" parent="Jugador" index="4"]
+position = Vector2( 188.574, 1566.71 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1967.0
+margin_bottom = 1144.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sombra" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4106.52, -660.716 )
+attack_range = 3000.0
+speed = 270.0
+
+[node name="Sombra3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4173.87, -979.495 )
+attack_range = 3000.0
+speed = 320.0
+
+[node name="Sombra4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 918.73, -638.267 )
+attack_range = 3000.0
+speed = 320.0
+
+[node name="Sombra5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 281.172, -1886.44 )
+attack_range = 3000.0
+speed = 320.0
+
+[node name="Sombra6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1515.88, -2779.92 )
+attack_range = 3000.0
+speed = 320.0
+
+[node name="Sombra7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3783.25, -1850.53 )
+attack_range = 3000.0
+speed = 320.0
+
+[node name="Sombra2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4124.48, -799.901 )
+attack_range = 3000.0
+speed = 320.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 2 )
+script = ExtResource( 1 )
+running = true
+speed = 360
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 3420.87, -978.375 )
+rotation = 2.79126
+rotate = false
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]
+texture = ExtResource( 3 )
+[connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
+[connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
+[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
+
+[editable path="Jugador"]

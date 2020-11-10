@@ -3,7 +3,7 @@ extends KinematicBody2D
 enum STATES {IDLE, ATTACKING, RETURNING_TO_ORIGIN}
 var state: int = STATES.IDLE
 var target: Node2D
-var attack_range: float = 400
+export var attack_range: float = 400
 export var speed: float = 200 #px/s
 var initial_position: Vector2
 var wasSpawned: bool = false
