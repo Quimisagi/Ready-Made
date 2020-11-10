@@ -24,3 +24,8 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 119.561, 181.223 )
 shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 127.784, 181.223 )
+scale = Vector2( 2.3173, 2.50209 )
+texture = ExtResource( 1 )
