@@ -6,6 +6,7 @@ var motion = Vector2.ZERO
 var collected_memories = 0
 var is_walking = false
 var is_active = true
+export var path_mundo: NodePath
 
 signal died
 signal collected_new_memory
@@ -71,7 +72,10 @@ func _on_Cinematica_area_entered(area):
 	cam.position.x = 100
 	
 func _check_if_memories_completed():
-	var mundo = get_tree().get_root().get_node("Mundo")
+	var mundo = get_node(path_mundo)
+	if not mundo:
+		printerr('No hay un mundo conectado a la propiedad path_mundo')
+		return
 	emit_signal('collected_new_memory', collected_memories)
 	mundo._are_memories_collected(collected_memories)
 	

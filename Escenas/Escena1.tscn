@@ -321,6 +321,7 @@ shape = SubResource( 5 )
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 411.654, 767.419 )
 MAX_SPEED = 320
+path_mundo = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
