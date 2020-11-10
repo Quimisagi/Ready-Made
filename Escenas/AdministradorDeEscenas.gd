@@ -15,8 +15,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func go_to_next_scene():
+	currentScene+=1
 	if currentScene < scenes.size():
-		currentScene+=1
 		var new_scene = scenes[currentScene]
 		get_tree().change_scene(new_scene)
 	else:
