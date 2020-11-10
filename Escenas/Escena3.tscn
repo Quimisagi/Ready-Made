@@ -194,6 +194,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_editor_description_": ""
 }
+MEMORIES_TO_RECOVER = 1
 
 [node name="LimitBottomLeft" type="Position2D" parent="."]
 position = Vector2( 4.23779, 1080 )
@@ -446,6 +447,7 @@ shape = SubResource( 4 )
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 522.815, -2214.29 )
 MAX_SPEED = 320
+path_mundo = NodePath("..")
 
 [node name="AudioStreamPlayer2D" parent="Jugador" index="4"]
 position = Vector2( 0, 4.23779 )
@@ -588,7 +590,7 @@ loop = false
 "memory",
 ] instance=ExtResource( 5 )]
 position = Vector2( -16, -25 )
-script = null
+script = ExtResource( 28 )
 
 [node name="Sprite" parent="Path2D/PathFollow2D/Node2D" index="1"]
 script = ExtResource( 28 )
@@ -662,8 +664,8 @@ texture = ExtResource( 27 )
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
 [connection signal="body_entered" from="Path2D/PathFollow2D/Node2D/Area2D9" to="Path2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Areas/Area2D4" to="Path2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Areas/Area2D4" to="Barreras/Barrera8" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Areas/Area2D4" to="Path2D" method="_on_Area2D_body_entered"]
 
 [editable path="Jugador"]
 
