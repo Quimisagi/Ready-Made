@@ -20,12 +20,12 @@ func _ready() -> void:
 	
 	
 func _are_memories_collected(var mem):
-	print(mem)
 	if mem == MEMORIES_TO_RECOVER:
-		emit_signal("memories_completed")
 		$Jugador/VictoryAudio.play()
+		$AudioStreamPlayer.stop()
+		emit_signal("memories_completed")
 		$Jugador.is_active = false
-		yield(get_tree().create_timer(1), "timeout")
+		yield(get_tree().create_timer(6), "timeout")
 		AdministradorDeEscenas.go_to_next_scene()
 
 func _on_Jugador_died(wait_time) -> void:
