@@ -85,7 +85,7 @@ position = Vector2( 960, -1628 )
 texture = ExtResource( 20 )
 
 [node name="frame6" type="Sprite" parent="Escenario/Sprites"]
-position = Vector2( 2880, -1628 )
+position = Vector2( 2926, -1626 )
 texture = ExtResource( 14 )
 
 [node name="frame7" type="Sprite" parent="Escenario/Sprites"]
@@ -359,7 +359,7 @@ autoplay = true
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint3" to="." method="_on_arrived_at_checkpoint"]
-[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
+[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 
 [editable path="Jugador"]

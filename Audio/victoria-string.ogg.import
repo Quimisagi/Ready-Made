@@ -11,5 +11,5 @@ dest_files=[ "res://.import/victoria-string.ogg-e37630e34d707a1667ae085e089b4c28
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

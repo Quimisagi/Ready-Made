@@ -35,7 +35,3 @@ func _on_Jugador_died(wait_time) -> void:
 
 func _on_arrived_at_checkpoint(checkpoint_position:Vector2) -> void:
 	last_checkpoint = checkpoint_position
-
-
-func _on_arrived_at_checkpointt():
-	pass # Replace with function body.
