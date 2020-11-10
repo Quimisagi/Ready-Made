@@ -72,10 +72,10 @@ func _on_Cinematica_area_entered(area):
 	cam.position.x = 100
 	
 func _check_if_memories_completed():
-	var mundo = get_node(path_mundo)
-	if not mundo:
+	if not path_mundo:
 		printerr('No hay un mundo conectado a la propiedad path_mundo')
 		return
+	var mundo = get_node(path_mundo)
 	emit_signal('collected_new_memory', collected_memories)
 	mundo._are_memories_collected(collected_memories)
 	
