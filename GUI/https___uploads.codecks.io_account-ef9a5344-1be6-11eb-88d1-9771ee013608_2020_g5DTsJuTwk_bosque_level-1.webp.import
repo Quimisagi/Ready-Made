@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/https___uploads.codecks.io_account-ef9a5344-1be6-11eb-88d1-9771ee013608_2020_g5DTsJuTwk_bosque_level-1.webp-469daade25e8516dd42178c12d448ea9.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://GUI/https___uploads.codecks.io_account-ef9a5344-1be6-11eb-88d1-9771ee013608_2020_g5DTsJuTwk_bosque_level-1.webp"
+dest_files=[ "res://.import/https___uploads.codecks.io_account-ef9a5344-1be6-11eb-88d1-9771ee013608_2020_g5DTsJuTwk_bosque_level-1.webp-469daade25e8516dd42178c12d448ea9.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
