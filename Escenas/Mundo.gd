@@ -25,9 +25,6 @@ func _are_memories_collected(var mem):
 	if mem == MEMORIES_TO_RECOVER:
 		emit_signal("memories_completed")
 		$Jugador.is_active = false
-		if fade_animator:
-			get_node(fade_animator).get_node('AnimationPlayer').play("Salir")
-			
 		yield(get_tree().create_timer(1), "timeout")
 		AdministradorDeEscenas.go_to_next_scene()
 

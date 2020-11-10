@@ -7,7 +7,7 @@
 [ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Escenas/Mundo.gd" type="Script" id=6]
 [ext_resource path="res://Niveles/Checkpoint/Checkpoint.gd" type="Script" id=7]
-[ext_resource path="res://GUI/AnimacionDeEscena.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/Fader.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 416, 7020 )
@@ -30,7 +30,6 @@ extents = Vector2( 1447.32, 78.3307 )
 [node name="Mundo" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 6 )
-fade_animator = NodePath("CanvasLayer/AnimacionDeEscena")
 
 [node name="LimitBottomLeft" type="Position2D" parent="."]
 
@@ -338,7 +337,22 @@ __meta__ = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="AnimacionDeEscena" parent="CanvasLayer" instance=ExtResource( 8 )]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="collected_new_memory" from="Jugador" to="." method="_on_Jugador_collected_new_memory"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D" to="." method="_on_arrived_at_checkpoint"]
