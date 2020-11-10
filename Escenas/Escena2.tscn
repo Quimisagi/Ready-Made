@@ -1,13 +1,28 @@
+<<<<<<< HEAD
+[gd_scene load_steps=27 format=2]
+=======
 [gd_scene load_steps=15 format=2]
+>>>>>>> 2bcd6f8aad06e0c6a2caa34fa40647f0358eb56f
 
 [ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Niveles/Escenarios/wireframe_level-2.png" type="Texture" id=2]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_1_1.png" type="Texture" id=2]
 [ext_resource path="res://Objetos/Auto.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Escenas/Mundo.gd" type="Script" id=6]
 [ext_resource path="res://Niveles/Checkpoint/Checkpoint.gd" type="Script" id=7]
 [ext_resource path="res://GUI/Fader.gd" type="Script" id=8]
 [ext_resource path="res://Audio/Segundo_Nivel_Mejorado.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_8_1.png" type="Texture" id=10]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_11_1.png" type="Texture" id=11]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_12_1.png" type="Texture" id=12]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_7_1.png" type="Texture" id=13]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_9_1.png" type="Texture" id=14]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_2_1.png" type="Texture" id=15]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_6_1.png" type="Texture" id=16]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_3_1.png" type="Texture" id=17]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_5_1.png" type="Texture" id=18]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_4_1.png" type="Texture" id=19]
+[ext_resource path="res://Niveles/Escenarios/SegundoNivel/image_10_1.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 416, 7020 )
@@ -30,7 +45,7 @@ extents = Vector2( 1447.32, 78.3307 )
 [node name="Mundo" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 6 )
-MEMORIES_TO_RECOVER = 5
+MEMORIES_TO_RECOVER = 6
 
 [node name="LimitBottomLeft" type="Position2D" parent="."]
 
@@ -47,11 +62,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fondo" type="Sprite" parent="."]
-position = Vector2( 928, 6336 )
-texture = ExtResource( 2 )
-
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect3" type="ColorRect" parent="."]
 margin_left = 374.177
 margin_top = 12232.0
 margin_right = 1161.18
@@ -60,16 +71,156 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 922.552, 12608 )
-path_mundo = NodePath("..")
+[node name="Paredes" type="StaticBody2D" parent="."]
 
-[node name="Camera2D2" type="Camera2D" parent="Jugador"]
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 1920
-limit_bottom = 12960
+[node name="image_10_1" type="Sprite" parent="Paredes"]
+position = Vector2( 926.869, 10092.6 )
+texture = ExtResource( 20 )
+
+[node name="image_11_1" type="Sprite" parent="Paredes"]
+position = Vector2( 926.869, 11170.6 )
+texture = ExtResource( 11 )
+
+[node name="image_12_1" type="Sprite" parent="Paredes"]
+position = Vector2( 928.309, 12282.5 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( -448, 6696 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 2304, 6640 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 848, -416 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 808, 13088 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 16, -16 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1840, -16 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 144, 1360 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1712, 1352 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 144, 6144 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1712, 6144 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 144, 10912 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1712, 10928 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 155.945, 12528 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1712, 12528 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 32, 3752 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1824, 3752 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 24, 8528 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1824, 8520 )
+shape = SubResource( 5 )
+
+[node name="image_6_1" type="Sprite" parent="Paredes"]
+position = Vector2( 929.642, 5791.38 )
+texture = ExtResource( 16 )
+
+[node name="image_7_1" type="Sprite" parent="Paredes"]
+position = Vector2( 929.641, 6873.07 )
+texture = ExtResource( 13 )
+
+[node name="image_8_1" type="Sprite" parent="Paredes"]
+position = Vector2( 926.497, 7951.61 )
+texture = ExtResource( 10 )
+
+[node name="image_9_1" type="Sprite" parent="Paredes"]
+position = Vector2( 927.561, 9014.75 )
+texture = ExtResource( 14 )
+
+[node name="image_1_1" type="Sprite" parent="Paredes"]
+position = Vector2( 928, 394.221 )
+texture = ExtResource( 2 )
+
+[node name="image_2_1" type="Sprite" parent="Paredes"]
+position = Vector2( 931.931, 1471.51 )
+texture = ExtResource( 15 )
+
+[node name="image_3_1" type="Sprite" parent="Paredes"]
+position = Vector2( 929.962, 2583.92 )
+texture = ExtResource( 17 )
+
+[node name="image_4_1" type="Sprite" parent="Paredes"]
+position = Vector2( 929.962, 3661.88 )
+texture = ExtResource( 19 )
+
+[node name="image_5_1" type="Sprite" parent="Paredes"]
+position = Vector2( 929.962, 4739.84 )
+texture = ExtResource( 18 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 359.152
+margin_top = 12344.7
+margin_right = 1159.15
+margin_bottom = 12744.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Recuerdos" type="Node2D" parent="."]
+
+[node name="Recuerdo" parent="Recuerdos" instance=ExtResource( 4 )]
+position = Vector2( 747.031, 9013.6 )
+
+[node name="Recuerdo5" parent="Recuerdos" instance=ExtResource( 4 )]
+position = Vector2( 898.993, 7163.48 )
+
+[node name="Recuerdo6" parent="Recuerdos" instance=ExtResource( 4 )]
+position = Vector2( 162.828, 5315.98 )
+
+[node name="Recuerdo2" parent="Recuerdos" instance=ExtResource( 4 )]
+position = Vector2( 866.116, 738.549 )
+
+[node name="Recuerdo3" parent="Recuerdos" instance=ExtResource( 4 )]
+position = Vector2( 759.812, 10735.8 )
+
+[node name="Recuerdo4" parent="Recuerdos" instance=ExtResource( 4 )]
+position = Vector2( 800.56, 12147.8 )
 
 [node name="Camera2D2" type="Camera2D" parent="Jugador"]
 current = true
@@ -91,7 +242,7 @@ position = Vector2( 1248, 9056 )
 position = Vector2( 984, 8816 )
 
 [node name="StaticBody2D8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 808, 9224 )
+position = Vector2( 813.501, 9293.15 )
 
 [node name="StaticBody2D10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1048, 8392 )
@@ -136,13 +287,13 @@ position = Vector2( 440, 4064 )
 position = Vector2( 1120, 4040 )
 
 [node name="StaticBody2D32" parent="." instance=ExtResource( 3 )]
-position = Vector2( 824, 3840 )
+position = Vector2( 824, 3836.09 )
 
 [node name="StaticBody2D23" parent="." instance=ExtResource( 3 )]
 position = Vector2( 400, 3656 )
 
 [node name="StaticBody2D24" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1136, 3600 )
+position = Vector2( 1130.13, 3613.7 )
 
 [node name="StaticBody2D25" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1232, 1944 )
@@ -216,15 +367,6 @@ position = Vector2( 944, 10088 )
 [node name="StaticBody2D3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1184, 10472 )
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 359.152
-margin_top = 12344.7
-margin_right = 1159.15
-margin_bottom = 12744.7
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Sombras" type="Node2D" parent="."]
 
 [node name="Sombra" parent="Sombras" instance=ExtResource( 5 )]
@@ -247,80 +389,6 @@ position = Vector2( 248, 6832 )
 
 [node name="Sombra6" parent="Sombras" instance=ExtResource( 5 )]
 position = Vector2( 368, 5392 )
-
-[node name="Paredes" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( -448, 6696 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 2304, 6640 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 848, -416 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 808, 13088 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 16, -16 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1840, -16 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 144, 1360 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 1352 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 144, 6144 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 6144 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 144, 10912 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 10928 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 144, 12528 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1712, 12528 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 32, 3752 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1824, 3752 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 24, 8528 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 1824, 8520 )
-shape = SubResource( 5 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -348,9 +416,22 @@ __meta__ = {
 }
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
+<<<<<<< HEAD
+position = Vector2( 896.614, 12582.3 )
+path_mundo = NodePath("..")
+
+[node name="Camera2D2" type="Camera2D" parent="Jugador"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1885
+limit_bottom = 12820
+
+=======
 position = Vector2( 1083.37, 12503.6 )
 path_mundo = NodePath("..")
 
+>>>>>>> 2bcd6f8aad06e0c6a2caa34fa40647f0358eb56f
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -377,8 +458,11 @@ __meta__ = {
 stream = ExtResource( 9 )
 autoplay = true
 [connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
+<<<<<<< HEAD
+=======
 [connection signal="collected_new_memory" from="Jugador" to="." method="_on_Jugador_collected_new_memory"]
 [connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
 [connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
+>>>>>>> 2bcd6f8aad06e0c6a2caa34fa40647f0358eb56f
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D" to="." method="_on_arrived_at_checkpoint"]
 [connection signal="arrived_at_checkpoint" from="Checkpoints/Area2D2" to="." method="_on_arrived_at_checkpoint"]

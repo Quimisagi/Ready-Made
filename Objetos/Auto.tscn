@@ -7,11 +7,6 @@ extents = Vector2( 143.549, 196.38 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 110.721, 176.995 )
-scale = Vector2( 2.77468, 2.5239 )
-texture = ExtResource( 1 )
-
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 margin_right = 231.0
@@ -26,6 +21,6 @@ position = Vector2( 119.561, 181.223 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 127.784, 181.223 )
+position = Vector2( 119.68, 181.223 )
 scale = Vector2( 2.3173, 2.50209 )
 texture = ExtResource( 1 )

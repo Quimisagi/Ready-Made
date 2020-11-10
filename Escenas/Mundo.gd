@@ -7,14 +7,14 @@ signal memories_completed
 func _ready() -> void:
 	if $Jugador:
 		last_checkpoint = $Jugador.position
-		if $LimitBottomLeft && $LimitBottomLeft:
-			# Calcular limites para la cámara
-			$Jugador/Camera2D.limit_bottom = $LimitBottomLeft.position.y
-			$Jugador/Camera2D.limit_left = $LimitBottomLeft.position.x
-			$Jugador/Camera2D.limit_right = $LimitTopRight.position.x
-			$Jugador/Camera2D.limit_top = $LimitTopRight.position.y
-		else:
-			printerr('Se necesitan los nodos LimitBottomLeft y LimitTopRight para calcular los límites para la cámara')
+#		if $LimitBottomLeft && $LimitBottomLeft:
+#			# Calcular limites para la cámara
+#			$Jugador/Camera2D.limit_bottom = $LimitBottomLeft.position.y
+#			$Jugador/Camera2D.limit_left = $LimitBottomLeft.position.x
+#			$Jugador/Camera2D.limit_right = $LimitTopRight.position.x
+#			$Jugador/Camera2D.limit_top = $LimitTopRight.position.y
+#		else:
+#			printerr('Se necesitan los nodos LimitBottomLeft y LimitTopRight para calcular los límites para la cámara')
 	else:
 		printerr('No hay un Jugador que sea hijo de esta escena')
 	
