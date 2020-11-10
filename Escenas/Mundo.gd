@@ -1,7 +1,6 @@
 extends Node
 
 export var MEMORIES_TO_RECOVER = 4
-export var fade_animator: NodePath
 var last_checkpoint: Vector2 = Vector2()
 signal memories_completed
 

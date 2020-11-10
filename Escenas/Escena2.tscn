@@ -344,6 +344,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+fadeOut = true
 
 [node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
 margin_right = 40.0
