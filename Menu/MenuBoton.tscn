@@ -3,10 +3,9 @@
 [ext_resource path="res://GUI/strokes_150.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Menu/MenuBoton.gd" type="Script" id=2]
 
+[sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 [node name="Boton" type="Button"]
 margin_left = 1.0
@@ -14,8 +13,9 @@ margin_top = -7.0
 margin_right = 1617.0
 margin_bottom = 171.0
 rect_min_size = Vector2( 50, 200 )
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Regresar"
 flat = true
 script = ExtResource( 2 )
 __meta__ = {
@@ -29,7 +29,8 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 20
-text = "Label
+text = "Regresar
+
 "
 __meta__ = {
 "_edit_use_anchors_": false

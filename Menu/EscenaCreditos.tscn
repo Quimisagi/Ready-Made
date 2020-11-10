@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Menu/BackButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menu/EscenaCreditos.gd" type="Script" id=2]
+[ext_resource path="res://GUI/_MtX-1Uy.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3.03711
+margin_top = -7.00342
+margin_right = -3.03711
+margin_bottom = -7.00342
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="_MtX-1Uy" type="Sprite" parent="."]
+position = Vector2( 882.282, 541.067 )
+scale = Vector2( 0.624883, 0.697581 )
+texture = ExtResource( 3 )
+
+[node name="Control" parent="." instance=ExtResource( 1 )]
+margin_left = 67.2855
+margin_top = 95.4468
+margin_right = 601.285
+margin_bottom = 295.447
+custom_styles/focus = SubResource( 1 )
+[connection signal="pressed" from="Control" to="." method="_on_Control_pressed"]
