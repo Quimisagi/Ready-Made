@@ -6,7 +6,7 @@ var scenes = [
 	'res://Escenas/Escena3.tscn',
 ]
 
-var game_over_scene = 'res://Menu/GameOver.tscn'
+var game_over_scene = 'res://Menu/EscenaCreditos.tscn'
 
 var currentScene = 0
 
