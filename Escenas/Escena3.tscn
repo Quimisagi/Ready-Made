@@ -1,0 +1,691 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://Escenas/Path.gd" type="Script" id=1]
+[ext_resource path="res://Personajes/Jugador/Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Personajes/Sombra/Sombra.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Escenas/Mundo.gd" type="Script" id=4]
+[ext_resource path="res://Objetos/Recuerdos/Recuerdo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/Fader.gd" type="Script" id=6]
+[ext_resource path="res://Objetos/Barrera/Barrera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Audio/fire.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Niveles/Checkpoint/Checkpoint.gd" type="Script" id=9]
+[ext_resource path="res://Niveles/Escenarios/frame7.png" type="Texture" id=10]
+[ext_resource path="res://Niveles/Escenarios/frame16.png" type="Texture" id=11]
+[ext_resource path="res://Niveles/Escenarios/frame14.png" type="Texture" id=12]
+[ext_resource path="res://Niveles/Escenarios/frame11.png" type="Texture" id=13]
+[ext_resource path="res://Niveles/Escenarios/frame6.png" type="Texture" id=14]
+[ext_resource path="res://Niveles/Escenarios/frame1.png" type="Texture" id=15]
+[ext_resource path="res://Niveles/Escenarios/frame2.png" type="Texture" id=16]
+[ext_resource path="res://Niveles/Escenarios/frame3.png" type="Texture" id=17]
+[ext_resource path="res://Niveles/Escenarios/frame8.png" type="Texture" id=18]
+[ext_resource path="res://Niveles/Escenarios/frame9.png" type="Texture" id=19]
+[ext_resource path="res://Niveles/Escenarios/frame5.png" type="Texture" id=20]
+[ext_resource path="res://Niveles/Escenarios/frame15.png" type="Texture" id=21]
+[ext_resource path="res://Niveles/Escenarios/frame13.png" type="Texture" id=22]
+[ext_resource path="res://Niveles/Escenarios/frame4.png" type="Texture" id=23]
+[ext_resource path="res://Niveles/Escenarios/frame10.png" type="Texture" id=24]
+[ext_resource path="res://Niveles/Escenarios/frame12.png" type="Texture" id=25]
+[ext_resource path="res://Escenas/fog.png" type="Texture" id=26]
+[ext_resource path="res://Escenas/fog2.png" type="Texture" id=27]
+[ext_resource path="res://Escenas/RecuerdoEspecial.gd" type="Script" id=28]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 123.58, 2318.51 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4026.13, 199.585 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 36.3345, 663.543 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 48.8948, 1223.25 )
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 594.071, -1738.99, 0, 0, 0, 0, 674.162, -1709.62, 0, 0, 0, 0, 764.931, -1685.6, 0, 0, 0, 0, 924.11, -1761.57, 0, 0, 0, 0, 1054.18, -1795.42, 0, 0, 0, 0, 1376.42, -1782.42, 0, 0, 0, 0, 1519.23, -1720.59, 0, 0, 0, 0, 1627.24, -1859.13, 0, 0, 0, 0, 1801.16, -1907.02, 0, 0, 0, 0, 2037.13, -1948.55, 0, 0, 0, 0, 2084.32, -2033.5, 0, 0, 0, 0, 2407.94, -2186.45, 0, 0, 0, 0, 2601.57, -2158.09, 0, 0, 0, 0, 2641.21, -1871.15, 0, 0, 0, 0, 2616.67, -1710.69, 0, 0, 0, 0, 2837.53, -1546.46, 0, 0, 0, 0, 2911.16, -1302.94, 0, 0, 0, 0, 3224.52, -1193.45, 0, 0, 0, 0, 3216.97, -874.418, 0, 0, 0, 0, 2837.53, -832.888, 0, 0, 0, 0, 2612.89, -1042.43, 0, 0, 0, 0, 2244.78, -940.49, 0, 0, 0, 0, 1689.78, -400.594, 0, 0, 0, 0, 1168.76, -121.207, 0, 0, 0, 0, 995.092, -187.278, 0, 0, 0, 0, 509.94, -96.6659, 0, 0, 0, 0, 266.421, 135.527, 0, 0, 0, 0, 251.319, 575.373, 0, 0, 0, 0, 270.196, 790.576, 0, 0, 0, 0, 424.992, 866.086, 0, 0, 0, 0, 776.113, 869.861, 0, 0, 0, 0, 1227.28, 660.321, 0, 0, 0, 0, 1063.05, 480.985, 0, 0, 0, 0, 1440.6, 305.425, 0, 0, 0, 0, 1563.3, 133.639, 0, 0, 0, 0, 1769.07, -43.8089, 0, 0, 0, 0, 2165.5, -211.819, 0, 0, 0, 0, 2354.27, -243.91, 0, 0, 0, 0, 2537.38, -102.329, 0, 0, 0, 0, 2720.49, 29.8133, 0, 0, 0, 0, 2871.51, 228.027, 0, 0, 0, 0, 3060.29, 224.251, 0, 0, 0, 0, 3084.83, 86.4457, 0, 0, 0, 0, 2975.34, -134.421, 0, 0, 0, 0, 2845.09, -353.4, 0, 0, 0, 0, 2650.65, -540.287, 0, 0, 0, 0, 2595.9, -823.449, 0, 0, 0, 0, 3067.84, -1016, 0, 0, 0, 0, 3318.91, -661.103, 0, 0, 0, 0, 3754.98, -445.899, 0, 0, 0, 0, 4057.02, -243.91, 0, 0, 0, 0, 4436.46, 12.824, 0, 0, 0, 0, 4687.53, 318.639, 0, 0, 0, 0, 4881.97, 397.925, 0, 0, 0, 0, 5384.11, 360.17, 0, 0, 0, 0, 5671.05, 141.191, 0, 0, 0, 0, 5899.46, 124.201, 0, 0, 0, 0, 6195.84, 328.078, 0, 0, 0, 0, 6586.6, 556.495, 0, 0, 0, 0, 7022.67, 592.363, 0, 0, 0, 0, 7526.7, 295.986, 0, 0, 0, 0, 7553.13, -198.604, 0, 0, 0, 0, 7443.64, -585.593, 0, 0, 0, 0, 7166.14, -851.765, 0, 0, 0, 0, 7211.45, -1123.6, 0, 0, 0, 0, 6898.08, -963.142, 0, 0, 0, 0, 6592.27, -997.122, 0, 0, 0, 0, 6082.57, -1110.39, 0, 0, 0, 0, 5671.04, -1129.26, 0, 0, 0, 0, 5338.8, -1070.74, 0, 0, 0, 0, 5102.83, -1367.12, 0, 0, 0, 0, 5110.38, -1563.45, 0, 0, 0, 0, 4725.28, -1695.59, 0, 0, 0, 0, 4898.96, -1950.43, 0, 0, 0, 0, 5093.39, -2031.61, 0, 0, 0, 0, 5010.33, -2395.94, 0, 0, 0, 0, 4887.63, -2562.07, 0, 0, 0, 0, 5208.55, -2613.03, 0, 0, 0, 0, 5559.67, -2713.09, 0, 0, 0, 0, 5878.7, -2790.48, 0, 0, 0, 0, 6095.79, -2667.78, 0, 0, 0, 0, 6539.41, -2662.12, 0, 0, 0, 0, 6896.19, -2865.99, 0, 0, 0, 0, 7003.79, -2686.66, 0, 0, 0, 0, 7260.53, -2737.63 )
+}
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 284.547
+
+[sub_resource type="Animation" id=12]
+resource_name = "moving"
+length = 8.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -16.9358, -0.25, 0, 0.25, 0, -67.905, -0.25, 0, 0.25, 0, 28.3702, -0.25, 0, 0.25, 0, -46.1959, -0.25, 0, 0.25, 0, -22.5991, -0.25, 0, 0.25, 0, 36.865, -0.25, 0, 0.25, 0, -12.2164, -0.25, 0, 0.25, 0, -3.72162, -0.25, 0, 0.25, 0, -16, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -25.9386, -0.25, 0, 0.25, 0, 12.7603, -0.25, 0, 0.25, 0, -15.556, -0.25, 0, 0.25, 0, -0.453857, -0.25, 0, 0.25, 0, -36.321, -0.25, 0, 0.25, 0, -5.1731, -0.25, 0, 0.25, 0, 19.3676, -0.25, 0, 0.25, 0, -6.11707, -0.25, 0, 0.25, 0, -25, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 )
+}
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 210.393, 52.6995 )
+
+[node name="Mundo" type="Node2D"]
+position = Vector2( 0, 8 )
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LimitBottomLeft" type="Position2D" parent="."]
+position = Vector2( 4.23779, 1080 )
+__meta__ = {
+"_editor_description_": "Place at the bottom left limit of the level. This node is used to calculate the camera limits"
+}
+
+[node name="LimitTopRight" type="Position2D" parent="."]
+position = Vector2( 7680, -3248 )
+__meta__ = {
+"_editor_description_": "Place at the top right limit of the level. This node is used to calculate the camera limits"
+}
+
+[node name="Escenario" type="StaticBody2D" parent="."]
+
+[node name="Sprites" type="Node2D" parent="Escenario"]
+
+[node name="frame1" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, -2708 )
+texture = ExtResource( 15 )
+
+[node name="frame2" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, -2708 )
+texture = ExtResource( 16 )
+
+[node name="frame3" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, -2708 )
+texture = ExtResource( 17 )
+
+[node name="frame4" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, -2708 )
+texture = ExtResource( 23 )
+
+[node name="frame5" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, -1628 )
+texture = ExtResource( 20 )
+
+[node name="frame6" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, -1628 )
+texture = ExtResource( 14 )
+
+[node name="frame7" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, -1628 )
+texture = ExtResource( 10 )
+
+[node name="frame8" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, -1628 )
+texture = ExtResource( 18 )
+
+[node name="frame9" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, -548 )
+texture = ExtResource( 19 )
+
+[node name="frame10" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, -548 )
+texture = ExtResource( 24 )
+
+[node name="frame11" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, -548 )
+texture = ExtResource( 13 )
+
+[node name="frame16" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, 532 )
+texture = ExtResource( 11 )
+
+[node name="frame15" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 4800, 532 )
+texture = ExtResource( 21 )
+
+[node name="frame14" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 2880, 532 )
+texture = ExtResource( 12 )
+
+[node name="frame13" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 960, 532 )
+texture = ExtResource( 22 )
+
+[node name="frame12" type="Sprite" parent="Escenario/Sprites"]
+position = Vector2( 6720, -548 )
+texture = ExtResource( 25 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Escenario"]
+polygon = PoolVector2Array( -3.50726, -0.380554, 0.38208, -1588, 291.689, -1332.57, 745.261, -1201.54, 881.333, -1282.18, 1148.44, -1272.1, 1259.31, -1337.61, 1455.86, -1382.97, 1586.89, -1438.41, 1758.24, -1634.95, 1808.63, -1816.38, 1944.71, -1796.22, 2151.33, -1695.43, 2312.6, -1584.56, 2398.28, -1483.76, 2332.76, -1332.57, 2252.13, -1272.1, 2242.05, -1151.14, 2206.77, -1065.47, 2095.9, -1035.23, 2035.42, -989.874, 1969.9, -924.359, 1803.59, -858.843, 1672.56, -798.366, 1642.32, -621.978, 1506.25, -591.739, 1435.7, -531.263, 1360.1, -475.827, 1264.35, -420.39, 1193.79, -319.596, 1143.4, -289.358, 961.968, -344.795, 775.499, -329.676, 649.507, -264.16, 543.674, -259.12, 452.959, -284.319, 275.57, -119.229, 161.277, -23.9849, 66.0333, 331.593, 47.6702, 712.573, 153.384, 840.94, 274.2, 976.858, 485.628, 1007.06, 757.464, 1014.61, 946.239, 991.96, 1112.36, 886.246, 1308.69, 757.879, 1489.91, 523.799, 1701.34, 402.983, 1701.34, 251.963, 1890.11, 17.8818, 2124.19, -80.281, 2380.93, 2.78003, 2637.66, 63.1877, 2750.93, 289.718, 2720.72, 493.594, 2607.46, 697.471, 2758.48, 780.532, 2969.91, 825.838, 3120.93, 984.409, 3271.94, 893.797, 3498.48, 954.205, 3589.09, 780.532, 3536.23, 599.309, 3302.15, 395.432, 3234.19, 32.9839, 3271.94, -57.6282, 3302.15, -397.423, 3513.58, -374.77, 3755.21, -291.709, 3951.53, -140.689, 4072.35, 85.8408, 4185.62, 214.208, 4208.27, 418.085, 4298.88, 606.86, 4480.1, 644.615, 4887.86, 659.717, 5189.9, 644.615, 5507.04, 554.002, 5605.2, 493.594, 5680.71, 667.267, 5884.59, 561.553, 6096.02, 720.125, 6503.77, 720.125, 6790.71, 772.981, 6987.03, 712.573, 7228.67, 803.185, 7500.5, 682.369, 7689.28, 478.493, 7696.83, 1059.92, -27.8397, 1090.12 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Escenario"]
+position = Vector2( 690.504, -3243.7 )
+polygon = PoolVector2Array( 1.8205, -1.67114, 99.3645, 127.827, 206.999, 205.189, 309.589, 314.506, 418.424, 795.927, 548.629, 1015.93, 638.426, 1217.97, 773.122, 1258.38, 975.165, 1208.99, 1082.92, 1182.05, 1302.92, 1141.65, 1343.33, 1060.83, 1316.39, 962.052, 1316.39, 845.316, 1320.88, 719.6, 1275.98, 620.823, 1410.68, 459.189, 1554.36, 306.534, 1720.48, 239.186, 1823.75, 162.859, 1855.18, 68.5718, 2030.28, 86.531, 2173.95, 140.409, 2331.1, 117.96, 2443.35, 73.0615, 2676.82, 32.6531, 2811.51, 46.1223, 2937.23, 176.328, 2896.82, 369.392, 2842.94, 445.719, 2721.72, 508.577, 2587.02, 418.78, 2416.41, 418.78, 2263.75, 436.739, 2079.67, 472.658, 1931.5, 522.046, 1801.3, 544.496, 1742.93, 665.721, 1814.77, 751.029, 1900.07, 822.866, 1962.93, 894.704, 1989.87, 975.521, 2102.12, 980.011, 2200.89, 971.031, 2308.65, 1047.36, 2411.92, 1123.69, 2474.77, 1195.52, 2573.55, 1155.11, 2681.31, 1258.38, 2757.63, 1316.75, 2807.02, 1420.02, 2928.25, 1518.79, 3076.41, 1509.81, 3188.66, 1568.18, 3260.5, 1590.63, 3377.23, 1613.08, 3467.03, 1604.1, 3597.24, 1622.06, 3664.58, 1595.12, 3709.48, 1482.87, 3749.89, 1406.55, 3803.77, 1325.73, 3911.53, 1159.6, 4041.73, 1105.73, 4059.69, 1110.22, 4055.2, 984.501, 4068.67, 921.643, 4050.71, 795.927, 3960.91, 719.6, 3839.69, 764.498, 3785.81, 809.397, 3673.56, 849.805, 3507.44, 804.907, 3435.6, 710.62, 3390.7, 513.067, 3417.64, 351.432, 3484.99, 275.105, 3669.07, 275.105, 3801.16, 442.169, 4086.63, 396.33, 4333.57, 373.88, 4488.47, 447.825, 4875.97, 419.541, 5130.52, 297.919, 5541.34, 293.063, 5936.63, 337.517, 6171.39, 232.865, 6488.17, 156.498, 6636.86, 73.0615, 6816.46, -3.26587 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Escenario"]
+position = Vector2( 3712.36, -847.57 )
+polygon = PoolVector2Array( 110.621, -157.634, 305.562, -352.575, 407.271, -411.906, 568.309, -445.808, 678.493, -462.76, 848.007, -403.43, 1034.47, -352.575, 1237.89, -166.11, 1475.21, 62.7339, 1678.63, 359.384, 1788.81, 478.043, 1915.95, 486.519, 2017.65, 647.558, 1890.52, 783.169, 1636.25, 876.401, 1407.4, 952.683, 1187.04, 884.877, 949.715, 800.12, 729.347, 639.082, 678.493, 545.849, 432.697, 494.995, 271.659, 308.529, 59.7666, 139.015, 8.91211, 20.3555 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Escenario"]
+polygon = PoolVector2Array( 6160.31, -521.719, 6384.56, -553.755, 6566.1, -660.542, 6651.53, -681.9, 6726.28, -778.009, 6619.49, -948.868, 6267.09, -948.868, 6042.84, -852.76, 5904.02, -649.864, 5989.45, -511.041 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Escenario"]
+polygon = PoolVector2Array( 6074.88, -83.8916, 6181.67, -201.357, 6405.92, -244.073, 6726.28, -318.824, 6961.21, -436.29, 7068, -532.398, 7345.65, -436.29, 7463.11, -212.036, 7377.68, -41.1768, 7217.5, 300.542, 7110.71, 418.008, 6801.03, 418.008, 6427.28, 353.936, 6256.42, 215.112, 6128.27, 33.5742 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Escenario"]
+polygon = PoolVector2Array( 5288.84, -2071.11, 5362.84, -1889.48, 5457.02, -1748.21, 5638.65, -1647.3, 5827.01, -1640.57, 5981.74, -1660.75, 6156.64, -1485.85, 6311.37, -1277.3, 6607.37, -1122.58, 6815.91, -1068.76, 6990.81, -1351.3, 7145.54, -1633.84, 7219.54, -1808.75, 7414.63, -1963.48, 7515.53, -2010.57, 7724.08, -1950.02, 7710.62, -2683.28, 7024.45, -2427.65, 6721.73, -2394.02, 6526.64, -2515.1, 6271.01, -2535.29, 6170.1, -2454.56, 5894.28, -2494.92, 5611.74, -2535.29, 5430.11, -2427.65, 5335.93, -2360.38 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario"]
+position = Vector2( -118.66, -1084.89 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Escenario"]
+position = Vector2( 7831.55, -1135.74 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Escenario"]
+position = Vector2( 3847.97, -3424.19 )
+shape = SubResource( 2 )
+
+[node name="Sombras" type="Node2D" parent="."]
+
+[node name="Sombra" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2647.57, -1430.6 )
+
+[node name="Sombra7" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2370.78, -1172.77 )
+
+[node name="Sombra9" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2848.79, -677.794 )
+
+[node name="Sombra5" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3136.14, -1469.67 )
+
+[node name="Sombra18" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2861.74, -1847.41 )
+
+[node name="Sombra17" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2936.58, -1020.65 )
+
+[node name="Sombra19" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 2279.71, -834.184 )
+
+[node name="Sombra20" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 809.178, -113.75 )
+
+[node name="Sombra21" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 406.582, 619.399 )
+
+[node name="Sombra22" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 1529.61, 377.841 )
+
+[node name="Sombra23" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 393.869, 140.521 )
+
+[node name="Sombra8" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3540.53, -1407.24 )
+
+[node name="Sombra10" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3447.29, -924.125 )
+
+[node name="Sombra11" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 3180.31, 737.114 )
+
+[node name="Sombra12" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5227.19, 177.717 )
+
+[node name="Sombra13" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5261.09, 529.459 )
+
+[node name="Sombra14" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 4379.62, 546.41 )
+
+[node name="Sombra15" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 6875.71, -589.334 )
+
+[node name="Sombra31" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 7600.39, -1746.27 )
+
+[node name="Sombra32" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 7282.55, -1682.7 )
+
+[node name="Sombra33" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 7413.92, -915.649 )
+
+[node name="Sombra34" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 6036.62, 448.94 )
+
+[node name="Sombra16" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 6104.42, -347.777 )
+
+[node name="Sombra24" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 6434.98, -415.582 )
+
+[node name="Sombra25" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5532.32, -530.004 )
+
+[node name="Sombra26" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5672.17, -551.194 )
+
+[node name="Sombra27" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5812.01, -572.383 )
+
+[node name="Sombra29" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5578.93, -686.805 )
+
+[node name="Sombra30" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5782.35, -707.994 )
+
+[node name="Sombra35" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5806.08, -1569.82 )
+
+[node name="Sombra36" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5324.66, -1381.81 )
+
+[node name="Sombra37" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 4837.31, -1297.06 )
+
+[node name="Sombra38" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5011.06, -1780.17 )
+
+[node name="Sombra40" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 4290.62, -2805.73 )
+
+[node name="Sombra41" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 4354.19, -2526.03 )
+
+[node name="Sombra39" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 4633.89, -1538.61 )
+
+[node name="Sombra28" parent="Sombras" instance=ExtResource( 3 )]
+position = Vector2( 5909.49, -589.334 )
+
+[node name="Recuerdos" type="Node2D" parent="."]
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" type="Area2D" parent="Checkpoints"]
+position = Vector2( 1917.89, -126.266 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint"]
+position = Vector2( 3.36365, -205.179 )
+shape = SubResource( 3 )
+
+[node name="Checkpoint2" type="Area2D" parent="Checkpoints"]
+position = Vector2( 3152.88, -1094.6 )
+rotation = 1.8652
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint2"]
+position = Vector2( 637.645, -1331.7 )
+rotation = 1.75232
+scale = Vector2( 1, 0.263513 )
+shape = SubResource( 4 )
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 522.815, -2214.29 )
+MAX_SPEED = 320
+
+[node name="AudioStreamPlayer2D" parent="Jugador" index="4"]
+position = Vector2( 0, 4.23779 )
+
+[node name="Barreras" type="Node2D" parent="."]
+
+[node name="Barrera9" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 753.648, -2839.41 )
+rotation = -3.53548
+scale = Vector2( 2.83094, 7.77263 )
+memories_required = 10
+
+[node name="AnimationPlayer" parent="Barreras/Barrera9" index="0"]
+anims/FadeOut = SubResource( 8 )
+
+[node name="ColorRect" parent="Barreras/Barrera9" index="1"]
+visible = false
+rect_scale = Vector2( 0.999994, 0.992979 )
+color = Color( 1, 1, 1, 0.247059 )
+
+[node name="Sprite" type="Sprite" parent="Barreras/Barrera9"]
+position = Vector2( 101.012, 11.2643 )
+rotation = 1.50921
+scale = Vector2( 0.209006, 0.603525 )
+texture = ExtResource( 27 )
+
+[node name="Barrera11" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 2781.25, -2754.5 )
+rotation = -3.15623
+scale = Vector2( 3.57609, 8.25189 )
+memories_required = 10
+
+[node name="AnimationPlayer" parent="Barreras/Barrera11" index="0"]
+anims/FadeOut = SubResource( 10 )
+
+[node name="ColorRect" parent="Barreras/Barrera11" index="1"]
+visible = false
+rect_scale = Vector2( 0.999994, 0.992979 )
+color = Color( 1, 1, 1, 0.247059 )
+
+[node name="CollisionShape2D" parent="Barreras/Barrera11" index="2"]
+scale = Vector2( 0.808795, 1.00275 )
+
+[node name="Sprite" type="Sprite" parent="Barreras/Barrera11"]
+position = Vector2( 101.012, 11.2643 )
+rotation = 1.50921
+scale = Vector2( 0.209006, 0.603525 )
+texture = ExtResource( 27 )
+
+[node name="Barrera7" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 4166.32, -1297.27 )
+rotation = -1.69562
+scale = Vector2( 2.83094, 2.96872 )
+memories_required = 10
+
+[node name="AnimationPlayer" parent="Barreras/Barrera7" index="0"]
+anims/FadeOut = SubResource( 6 )
+
+[node name="ColorRect" parent="Barreras/Barrera7" index="1"]
+visible = false
+rect_scale = Vector2( 0.999994, 0.992979 )
+color = Color( 1, 1, 1, 0.247059 )
+
+[node name="CollisionShape2D" parent="Barreras/Barrera7" index="2"]
+position = Vector2( 50.4576, 9.65941 )
+scale = Vector2( 0.882567, 1.14203 )
+
+[node name="Sprite" type="Sprite" parent="Barreras/Barrera7"]
+position = Vector2( 101.012, 11.2643 )
+rotation = 1.50921
+scale = Vector2( 0.339194, 0.416551 )
+texture = ExtResource( 27 )
+
+[node name="Barrera10" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 3894.18, -183.498 )
+rotation = -0.897199
+scale = Vector2( 2.83094, 2.96872 )
+memories_required = 10
+
+[node name="Sprite" type="Sprite" parent="Barreras/Barrera10"]
+position = Vector2( 86.4379, -0.790709 )
+rotation = 1.50921
+scale = Vector2( 0.352662, 0.4934 )
+texture = ExtResource( 27 )
+
+[node name="Barrera8" parent="Barreras" instance=ExtResource( 7 )]
+position = Vector2( 776.487, 815.205 )
+rotation = -0.65462
+scale = Vector2( 2.83094, 2.96872 )
+memories_required = 10
+
+[node name="AnimationPlayer" parent="Barreras/Barrera8" index="0"]
+anims/FadeOut = SubResource( 7 )
+
+[node name="ColorRect" parent="Barreras/Barrera8" index="1"]
+visible = false
+rect_scale = Vector2( 0.999994, 0.992979 )
+color = Color( 1, 1, 1, 0.247059 )
+
+[node name="CollisionShape2D" parent="Barreras/Barrera8" index="2"]
+position = Vector2( 50.4576, 9.65941 )
+scale = Vector2( 0.882567, 1.14203 )
+
+[node name="Sprite" type="Sprite" parent="Barreras/Barrera8"]
+position = Vector2( 101.012, 11.2643 )
+rotation = 1.50921
+scale = Vector2( 0.339194, 0.416551 )
+texture = ExtResource( 27 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 979.116, 539.95 )
+scale = Vector2( 1.0198, 1.0198 )
+texture = ExtResource( 26 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1967.0
+margin_bottom = 1144.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 5 )
+script = ExtResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 594.071, -1738.99 )
+rotate = false
+loop = false
+
+[node name="Node2D" parent="Path2D/PathFollow2D" groups=[
+"memory",
+] instance=ExtResource( 5 )]
+position = Vector2( -16, -25 )
+script = null
+
+[node name="Sprite" parent="Path2D/PathFollow2D/Node2D" index="1"]
+script = ExtResource( 28 )
+
+[node name="Area2D9" type="Area2D" parent="Path2D/PathFollow2D/Node2D"]
+position = Vector2( 1263.84, -232.46 )
+scale = Vector2( 1.10467, 1.10467 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Node2D/Area2D9"]
+position = Vector2( -1139.89, 215.668 )
+rotation = 1.2045
+shape = SubResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Node2D"]
+anims/moving = SubResource( 12 )
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Area2D7" type="Area2D" parent="Areas"]
+position = Vector2( 1490.24, -354.889 )
+rotation = -0.0628916
+scale = Vector2( 2.7344, 2.7344 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D7"]
+position = Vector2( 686.385, -62.8479 )
+rotation = 2.38511
+scale = Vector2( 0.25701, 1.2516 )
+shape = SubResource( 11 )
+
+[node name="Area2D4" type="Area2D" parent="Areas"]
+position = Vector2( 206.174, 369.784 )
+rotation = -0.757488
+scale = Vector2( 2.7344, 2.7344 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D4"]
+position = Vector2( 53.8174, 33.6359 )
+rotation = 1.2045
+shape = SubResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 2201.65, -1053.65 )
+texture = ExtResource( 27 )
+
+[node name="Sprite2" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 3197.28, -1803.73 )
+texture = ExtResource( 27 )
+
+[node name="Sprite5" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( 3300.62, -830.864 )
+scale = Vector2( 1.11507, 0.993401 )
+texture = ExtResource( 27 )
+
+[node name="Sprite3" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 2938.28, 49.61 )
+texture = ExtResource( 27 )
+
+[node name="Sprite4" type="Sprite" parent="Areas"]
+modulate = Color( 1, 1, 1, 0.564706 )
+position = Vector2( 5689.69, -676.925 )
+texture = ExtResource( 27 )
+[connection signal="memories_completed" from="." to="CanvasLayer/ColorRect" method="_on_Mundo_memories_completed"]
+[connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
+[connection signal="arrived_at_checkpoint" from="Checkpoints/Checkpoint2" to="." method="_on_Checkpoint_arrived_at_checkpoint"]
+[connection signal="died" from="Jugador" to="." method="_on_Jugador_died"]
+[connection signal="died" from="Jugador" to="CanvasLayer/BlackScreen" method="_on_Jugador_died"]
+[connection signal="body_entered" from="Path2D/PathFollow2D/Node2D/Area2D9" to="Path2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Areas/Area2D7" to="Barreras/Barrera10" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Areas/Area2D4" to="Path2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Areas/Area2D4" to="Barreras/Barrera8" method="_on_Area2D_body_entered"]
+
+[editable path="Jugador"]
+
+[editable path="Barreras/Barrera9"]
+
+[editable path="Barreras/Barrera11"]
+
+[editable path="Barreras/Barrera7"]
+
+[editable path="Barreras/Barrera8"]
+
+[editable path="Path2D/PathFollow2D/Node2D"]

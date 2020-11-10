@@ -9,3 +9,7 @@ func _ready():
 func _on_Jugador_collected_new_memory(num_of_memories) -> void:
 	if num_of_memories >= memories_required:
 		$AnimationPlayer.play("FadeOut")
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group('memory'):
+		$AnimationPlayer.play("FadeOut")
