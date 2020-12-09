@@ -24,10 +24,10 @@ MEMORIES_TO_RECOVER = 6
 position = Vector2( 1193.06, -2990.19 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -32.0
-margin_top = -144.0
-margin_right = 1888.0
-margin_bottom = 12816.0
+margin_left = -35.1748
+margin_top = -145.587
+margin_right = 1884.83
+margin_bottom = 12814.4
 rect_min_size = Vector2( 1920, 12960 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -249,14 +249,20 @@ movement_range = 50
 position = Vector2( 963.027, 7353.29 )
 
 [node name="Sombra7" parent="Sombras" instance=ExtResource( 5 )]
-position = Vector2( 1288, 4655.57 )
-attack_range = 290.0
-speed = 250.0
+position = Vector2( 1288, 4651.08 )
+attack_range = 500.0
+speed = 300.0
 
 [node name="Sombra13" parent="Sombras" instance=ExtResource( 5 )]
-position = Vector2( 1271.05, 4494.53 )
-attack_range = 290.0
-speed = 250.0
+position = Vector2( 1271.05, 4492.28 )
+attack_range = 500.0
+speed = 300.0
+
+[node name="Sombra14" parent="Sombras" instance=ExtResource( 5 )]
+position = Vector2( 553.838, 1525.42 )
+attack_range = 2000.0
+speed = 100.0
+movement_range = 30
 
 [node name="Sombra5" parent="Sombras" instance=ExtResource( 5 )]
 position = Vector2( 387.691, 6730.41 )

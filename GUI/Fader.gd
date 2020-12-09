@@ -9,12 +9,12 @@ func _process(delta):
 		
 		modulate.a += speed * delta
 		
-		if modulate.a >= 1 || modulate.a <= 0:
+	if modulate.a >= 1 || modulate.a <= 0:
 			fadeIn = false
 			
 	if fadeOut:
 		modulate.a -= delta
-		if modulate.a <= 0:
+	if modulate.a <= 0:
 			fadeOut = false
 			visible = false
 
