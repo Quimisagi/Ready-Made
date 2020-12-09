@@ -260,7 +260,7 @@ speed = 300.0
 
 [node name="Sombra14" parent="Sombras" instance=ExtResource( 5 )]
 position = Vector2( 553.838, 1525.42 )
-attack_range = 2000.0
+attack_range = 500.0
 speed = 100.0
 movement_range = 30
 
