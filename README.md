@@ -2,5 +2,5 @@
 
 ## Integrantes del grupo:
 
-Nicolas Lasso  (1740395) 
+Nicolas Lasso  (1740395)  \ 
 David Crespo (1623100)
